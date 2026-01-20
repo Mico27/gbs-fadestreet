@@ -31,6 +31,13 @@
   "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
   "script": [
     {
+      "command": "EVENT_MUSIC_PLAY",
+      "args": {
+        "musicId": "f50428ab-a084-4591-9bba-2ba10fe7b1c6"
+      },
+      "id": "941f1deb-e2fa-450b-9dbb-77318e3f9afc"
+    },
+    {
       "command": "EVENT_COMMENT",
       "args": {
         "text": "Automatic Fade In doesn't work after you install Fade Street. In this scene, Automatic Fade in is disabled, but that's just for neatness in the editor. Enabling it won't cause the scene to fade in. \n\nFrom here on, we'll manage colour palettes 100% using the Fade Street events.\n\nN.B. When you first add Fade Street to a project, you need to add at least one event to fade the palettes in, or your game will be stuck on white forever.\n\nIn most cases, changing the background palettes for the scene in GB Studio [above] doesn't affect what we see when the cart runs, but it can still be useful to set palettes for the scene so that we can see an accurate preview in the editor.\n\n(See scenes \"[12] Automagic Fades\" and \"[5] Blend Shift & Auto Colour\" for information about how Fade Street can interact with the palettes set using the GB Studio editor)\n\nWhen this init script runs, all the palettes on the CGB will be white. We're going to fade in from white to pink, and then gradually introduce the elements in the scene.\n\nOnce the main elements are introduced, the actor On Update scripts will start running and handle the looping part of the animation.",

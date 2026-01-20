@@ -36,6 +36,42 @@
     {
       "id": "SHOOTER_WALL_COLLISION_GROUP",
       "value": "COLLISION_GROUP_NONE"
+    },
+    {
+      "id": "plat_dec",
+      "value": 0
+    },
+    {
+      "id": "plat_air_dec",
+      "value": 0
+    },
+    {
+      "id": "plat_walk_acc",
+      "value": 163
+    },
+    {
+      "id": "FEAT_PLATFORM_RUN",
+      "value": 0
+    },
+    {
+      "id": "FEAT_PLATFORM_JUMP",
+      "value": 0
+    },
+    {
+      "id": "FEAT_PLATFORM_LADDERS",
+      "value": 0
+    },
+    {
+      "id": "FEAT_PLATFORM_SLOPES",
+      "value": 0
+    },
+    {
+      "id": "FEAT_PLATFORM_KNOCKBACK",
+      "value": 0
+    },
+    {
+      "id": "FEAT_PLATFORM_BLANK",
+      "value": 0
     }
   ]
 }

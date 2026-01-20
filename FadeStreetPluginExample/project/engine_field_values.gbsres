@@ -55,7 +55,7 @@
     },
     {
       "id": "FEAT_PLATFORM_JUMP",
-      "value": 0
+      "value": 1
     },
     {
       "id": "FEAT_PLATFORM_LADDERS",
@@ -63,7 +63,7 @@
     },
     {
       "id": "FEAT_PLATFORM_SLOPES",
-      "value": 0
+      "value": 1
     },
     {
       "id": "FEAT_PLATFORM_KNOCKBACK",
