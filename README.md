@@ -1,28 +1,5 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Fade Street: Introduction</title>
-		<link rel="stylesheet" href="./.tufte-css/tufte.css"/>
-		<style>
-			.collage {display: grid; grid-template-columns: 160px 160px 160px 160px; grid-template-rows: 144px 144px 144px 144px; grid-row-gap:0px; grid-column-gap:0px;}
-			.img1 {grid-row: 1; grid-column: 1;}
-			.img2 {grid-row: 1; grid-column: 2;}
-			.img3 {grid-row: 1; grid-column: 3;}
-			.img4 {grid-row: 1; grid-column: 4;}
-			.img5 {grid-row: 2; grid-column: 1;}
-			.img6 {grid-row: 2/4; grid-column: 2/4;}
-			.img7 {grid-row: 2; grid-column: 4;}
-			.img8 {grid-row: 3; grid-column: 1;}
-			.img9 {grid-row: 3; grid-column: 4;}
-			.img10{grid-row: 4; grid-column: 1;}
-			.img11{grid-row: 4; grid-column: 2;}
-			.img12{grid-row: 4; grid-column: 3;}
-			.img13{grid-row: 4; grid-column: 4;}
-			.subtitle span {
-				font-style: normal;
-			}
-		</style>
-	</head>
 	<body>
 		<article>
 		<section>
@@ -52,7 +29,6 @@
 				</div>
 			</figure>
 		</section>
-		
 		<section>
 			<h2>What happens if you use this plugin</h2>
 				<p>First, all automatic fades, as well as the built-in <em>Fade In</em> and <em>Fade Out</em> events, are disabled. They just do not work at all in any situation.</p>
@@ -69,7 +45,6 @@
 			All the <em>Fade Street</em> events generate GBVM scripts, which contain precalculated colour palettes and exact timing information. Your game no longer needs to calculate any colours at run time; it just runs the script to play back the precalculated effect.
 			</p>
 		</section>
-
 		<section>
 			<h2>Adding <em>Fade Street</em> to a GB Studio project</h2>
 			<p>To add <em>Fade Street</em> to your GB Studio project, simply copy the directory <code>FadeStreetPlugin/</code> into the <code>plugins/</code> subdirectory of your project.
@@ -78,16 +53,13 @@
 			This will add the new events to the <em>Add Event</em> menu for your project, as well as automatically applying the relevant engine modifications when you compile your game.
 			</p>
 		</section>
-			
 		<section>
 			<h2>What are the disadvantages of using Fade Street?</h2>
 			<p>There are a few drawbacks to using <em>Fade Street</em>. First, because the automatic fades are disabled, you need to add events to each scene to manually control the fade in and fade out. This means a few extra clicks to set up each new scene. Some fade events have more options than the default events, which adds a few more clicks on top of that.</p>
-
 			<p>
 			Second, the new events use more ROM space than the automatic fades.<label for="mn-space" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-space" class="margin-toggle"/><span class="marginnote">If you are a beginner Game Boy developer, do not worry about ROM size.<br><br>You've probably heard a lot of stories about how your favourite game developers worried about ROM size. Those stories get shared a lot, not because data compression and space optimisation is incredibly important for Game Boy development, but because the stories are interesting and easy to understand for a wide audience.<br><br>For GB Studio developers in 2024, ROM size is less relevant than you might expect. If you're making your first game, just worry about creating something (anything).</span> Fades with more colour steps take more ROM space, and some special effects like colour cycles can use quite a lot of ROM space, depending on the options you choose.
 			</p>
 		</section>
-
 		<section>
 			<h2>What are the advantages of using Fade Street?</h2>
 			<p>
@@ -95,7 +67,6 @@
 			</p>
 			<p>The new events enable you to create a huge variety of effects, from day-night cycles, to rain, snow, and water effects, to pseudo-3D effects, to dissolves, and many more. Some of these effects would be difficult or impossible to program using the default GB Studio events.</p>
 		</section>
-
 		<section>
 			<h2>Fades and colour cycles</h2>
 			<p>The effects that <em>Fade Street</em> can create are broadly divided into two groups: <em>fades</em> and <em>colour cycles</em>.</p>
@@ -116,7 +87,6 @@
 				<img src=".img/fadecycle.svg" alt="A diagram showing how a colour palette is cycled and faded at the same time."></img>
 			</figure>
 		</section>
-
 		<section>
 			<h2>Simple, standard, special</h2>
 			<p>A lot of the <em>Fade Street</em> events are labelled with these adjectives: <em>Simple</em>, <em>Standard</em>, and <em>Special</em>. These terms just refer to how simple or complex the event options are; the underlying colour calculations and logic remain the same.</p>
@@ -124,7 +94,6 @@
 			<p>For <em>Simple</em> fades, one endpoint is chosen from a list of presets. This speeds up the process of programming common effects like "Fade to black", etc.</p>
 			<p><em>Special</em> fade events have the most complicated settings, and exist to cover edge cases and bridge the gap between other events. You choose palettes for both endpoints, <em>and</em> you have the option to apply a preset effect to either endpoint.</p>
 		</section>
-		
 		<section>
 			<h2>Bespoke colour cycles</h2>
 			<p>
@@ -140,7 +109,6 @@
 			</figure>
 			<p>For background palettes, slots 0, 1, 2, and 3 of each palette correspond to GB Studio's white, light grey, dark grey, and black colours, respectively.</p>
 			<p>For sprite palettes, slots 0, 1, 2, and 3 of each palette correspond to GB Studio's transparent, white, light grey, and black colours, respectively.</p>
-			
 			<h3>Entering colours</h3>
 			<p>Colours are also entered as a comma separated list. You have the option of several colour formats to choose from. All the colours in the list must be entered in the same format.</p>
 			<p>If&mdash;and only if&mdash;you want to copy hexadecimal colour values from the GB Studio palettes screen, choose the <em>GBS representative hex</em> option. This option is useful if you want to match colours to existing GB Studio palettes.<p>
@@ -149,16 +117,13 @@
 			<p>To enter colours in the native Game Boy format, choose <em>Game Boy 15-bit hex</em>. This option may be useful if you want to copy palettes from an emulator.</p>
 			<p>In all cases, a leading <code>#</code> or <code>0x</code> is optional.</p>
 		</section>
-
 		<section>
 			<h2>Automagic fades</h2>
 			<p>For the most part, Fade Street lets you manage palettes in a way that's completely separate from the default GB Studio behaviour; the palettes that you set for a scene in the GB Studio editor will have no effect on the palette that appear on screen.</p>
 			<p>An exception to this rule comes in the form of the <em>Automagic</em> events: <em>Automagic Fade In</em>, <em>Automagic Fade Out</em> and <em>Automagic Special Fade</em>. These events work directly with the scene palettes set in the GB Studio editor, including automatic background palettes, if present.</p>
 			<p>Another unique feature of these events is that they will work in both colour and monochrome modes. Depending on your project settings, the events will store a monochrome fade, a colour fade, or both on the ROM, and the correct one will be chosen at run time.</p>
 			<p>These events are the closest thing that <em>Fade Street</em> has to a drop-in replacement for the default <em>Fade In</em> and <em>Fade Out</em> events, and they may be especially useful for beginners or people migrating large GB Studio projects.</p>
-	
 		</section>
-
 		<section>
 			<h2>Monochrome mode</h2>
 			<p>
@@ -167,7 +132,6 @@
 			<p><em>DMG Fade</em> includes the option to flicker intermediate colours. This means rapidly alternating between two colours to create the illusion of a middle colour. Using this method, you can create the appearance of three extra colours in between the four normal shades of grey (seven colours in total), for a smoother colour gradient. However, the effectiveness of this technique strongly depends on the type of screen that it's viewed on.</p>
 			<p>Original Game Boy screens tend to blur successive frames together, making this kind of effect look good. On newer screens, or with certain emulators, it can result in a very unpleasant visible flicker. Use this option with caution.</p>
 		</section>
-		
 		<section>
 			<h2>"Black cart" games</h2>
 			<p>
@@ -177,7 +141,6 @@
 			It's possible to use the other events in dual-compatible games, but they need to be wrapped in a <em>If Color Mode Is Available</em> event. Create one fade for monochrome mode, and another fade for colour mode, and use an <em>If Colour Mode Is Available</em> event to choose between them at run time.
 			</p>
 		</section>
-		
 		<section>
 			<h2>Multiple fades or colour cycles in a single event</h2>
 			<p>
@@ -201,11 +164,10 @@
 			</p>
 			<p>This can greatly enhance certain colour cycling effects, but it forces palettes to update every frame, which can can create very large scripts<label for="mn-banksize" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-banksize" class="margin-toggle"/><span class="marginnote">OK, you have to worry about ROM size a <em>little bit</em>. Don't create scripts that are so big that your game can't compile.</span>. Use it in moderation.</p>
 		</section>
-
 		<section>
 			<h2>Next Steps</h2>
 			<h3>Learning more</h3>
-			<p>A demo project is included in the <code>FadeStreetDemo/</code> directory, which contains examples of most of the <em>Fade Street</em> events in action. That project also has a lot of comments which fill in some more of the practical details of how to use the events.</p>
+			<p>A demo project is included in the <code>FadeStreetPluginExample/</code> directory, which contains examples of most of the <em>Fade Street</em> events in action. That project also has a lot of comments which fill in some more of the practical details of how to use the events.</p>
 			<p>All <em>Fade Street</em> events are listed in the <em>Fade Street</em> group. Additionally, five events are listed separately in the <em>Fade Street - Beginner Friendly</em> group. These events may be some of the easier ones to get started with.</p>
 			<h3>Finding inspiration</h3>
 			<p>In some ways, the challenging part of <em>Fade Street</em> isn't actually using the events, or learning the options; it's knowing <em>when</em> to use them, and understanding the effects you want to create.</p>
@@ -217,8 +179,6 @@
 			<p><em>Go n-éirí leat!</em>
 			</p>
 		</section>
-
-
 		</article>
 	</body>
 </html>
