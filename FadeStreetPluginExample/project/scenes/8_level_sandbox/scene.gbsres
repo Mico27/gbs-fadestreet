@@ -1,0 +1,273 @@
+{
+  "_resourceType": "scene",
+  "id": "b02597d2-3992-48e9-9ee4-44da1888bf00",
+  "_index": 2,
+  "type": "PLATFORM",
+  "name": "[8] Level Sandbox",
+  "symbol": "scene_3",
+  "notes": "This scene shows how palette transitions can be integrated into gameplay.\n\nYou can use also this scene to experiment with programming interactive colour fades.\n\nNote that the things you can interact with are spaced out around the scene. This is deliberate--it guarantees that any events launched by a trigger will end before the player can get to the next trigger. That way we never have a fade interrupting a previous fade before it finishes.\n\nThe player can swap between two colours: cyan and green. All scripts that affect the player palette check the variable $GreenPlayer, and choose a different version of the fade event depending on its value.",
+  "labelColor": "yellow",
+  "x": 248,
+  "y": 872,
+  "width": 60,
+  "height": 36,
+  "backgroundId": "4feb7951-666d-4c5e-a132-e4e576b96bbb",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+    "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+    "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+    "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+    "4876217b-6988-4570-abf3-e95c1c72d4d3",
+    "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+    "b38d4b6b-a42a-4e3b-9690-adf0b486d7a4"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "8f8902d0-5843-45fd-bcb6-94a8b0ffd6f7",
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_INT16 _plat_grav 1798",
+        "__collapse": true
+      },
+      "id": "72de4dcc-8373-47a5-b067-b61c091dd808"
+    },
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b",
+          "left",
+          "up",
+          "down",
+          "right",
+          "a",
+          "start",
+          "select"
+        ],
+        "__collapse": true
+      },
+      "id": "38d54a14-24e2-4cd8-b6d3-747fed39d238"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 15,
+        "__collapse": true
+      },
+      "id": "2e8c1f26-3264-4c62-b485-efb435406f04"
+    },
+    {
+      "command": "EVENT_RESET_VARIABLES",
+      "args": {
+        "__collapse": true
+      },
+      "id": "108aa5e2-1450-4a66-932d-dfb95b4bcb64"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "from",
+        "endpoint": "rgb",
+        "target_r": 31,
+        "target_g": 0,
+        "target_b": 0,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+        "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+        "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+        "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+        "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+        "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+        "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+        "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+        "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+        "obj1_start": "keep",
+        "obj2_start": "keep",
+        "obj3_start": "keep",
+        "obj4_start": "keep",
+        "obj5_start": "keep",
+        "obj6_start": "keep",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "a22e02fe-fcbf-40c1-9dbc-15a549b5a7b7"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "start"
+        ],
+        "override": true,
+        "__scriptTabs": "press",
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Restart Demo?"
+              ],
+              "avatarId": "",
+              "__collapse": false
+            },
+            "id": "5238f7a2-1e0d-42bd-b35d-3719ae38ab61"
+          },
+          {
+            "command": "EVENT_CHOICE",
+            "args": {
+              "variable": "L0",
+              "trueText": "Yes",
+              "falseText": "No",
+              "__collapse": true
+            },
+            "id": "ca5dd9b7-b969-452e-a3a2-73bfbe1ba84d"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "L0"
+                },
+                "valueB": {
+                  "type": "true"
+                }
+              },
+              "__collapseElse": true,
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "1"
+                      },
+                      "valueB": {
+                        "type": "true"
+                      }
+                    },
+                    "__collapseElse": true
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                        "args": {
+                          "tofrom": "to",
+                          "endpoint": "white",
+                          "target_r": 0,
+                          "target_g": 0,
+                          "target_b": 0,
+                          "steps": 20,
+                          "frames": 3,
+                          "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                          "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                          "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                          "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                          "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                          "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                          "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+                          "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                          "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+                          "obj1_start": "keep",
+                          "obj2_start": "keep",
+                          "obj3_start": "keep",
+                          "obj4_start": "keep",
+                          "obj5_start": "keep",
+                          "obj6_start": "keep",
+                          "obj7_start": "keep",
+                          "force_initial": false,
+                          "no_initial_wait": false,
+                          "__collapse": true
+                        },
+                        "id": "edce46d8-04c3-40a1-8c44-58f0e037e936"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                        "args": {
+                          "tofrom": "to",
+                          "endpoint": "white",
+                          "target_r": 0,
+                          "target_g": 0,
+                          "target_b": 0,
+                          "steps": 20,
+                          "frames": 3,
+                          "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                          "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                          "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                          "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                          "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                          "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                          "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+                          "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                          "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+                          "obj1_start": "keep",
+                          "obj2_start": "keep",
+                          "obj3_start": "keep",
+                          "obj4_start": "keep",
+                          "obj5_start": "keep",
+                          "obj6_start": "keep",
+                          "obj7_start": "keep",
+                          "force_initial": false,
+                          "no_initial_wait": false,
+                          "__collapse": false
+                        },
+                        "id": "98f40230-3e67-4757-a7f0-19b22defba18"
+                      }
+                    ]
+                  },
+                  "id": "77ed131a-03b7-4231-88f3-576ace2dba03"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3089f9e2-377c-435c-b522-08256f8ed303",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "",
+                    "fadeSpeed": "2",
+                    "__collapse": true
+                  },
+                  "id": "f24d6378-32c5-4a0d-b49c-2480232b69eb"
+                }
+              ],
+              "false": []
+            },
+            "id": "1138a748-6822-48a2-a6c8-abd818dcf0f5"
+          }
+        ]
+      },
+      "id": "f8d1f649-b8b7-460e-bd59-b713f5e16ead"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "0f80+002e+0fe+002e+0fa+0034+0f8+0034+0f6+0036+0f6+0036+0fe+0030+0fc+0026+0f6+004+0f4+00d+0f6+001b+0f6+004+0f4+00d+0f6+00f+0f8+00e+0f4+0022+0f8+00e+0f4+0018+0f6+001a+0f4+0018+0f6+001a+0f4+0038+0fb+0031+0fb+0031+0f4+0038+0f4+00a+0f28+006+0f4+00a+0f!003+0f!00!0f!00!0f!00!0f!00!0f!00!0f!002+0f!004+0f!002+0f!00!0f!00!0f!003+0f!004+0f!007+0f4+00a+0f2+002+0f3+00!0f!00!0f!00!0f3+002+0f2+003+0f!002+0f2+002+0f2+002+0f2+003+0f!007+0f4+00a+0f!003+0f!00!0f!00!0f!00!0f!00!0f!00!0f!002+0f!00!0f!002+0f!002+0f!00!0f!00!0f!003+0f!004+0f!005+0f6+00a+0f!003+0f!00!0f!00!0f2+002+0f3+002+0f2+003+0f!002+0f!00!0f!00!0f3+00!0f3+002+0f!005+0f6+0036+0f6+0036+0f6+0033+20!0f4+002+0f2+0032+20!00!0f4+002+0f2+00f+20!0f8+30!0012+20!0fc+002+0f2+00e+20!00!0f8+00!30!0010+20!00!0fc+002+0f2+004+0f4+004+0f10+00b+20!0fc+006+0f2+004+0f4+004+0f10+00a+20!00!0fc+006+0f12+008+0f14+00e+0f12+008+0f14+00e+0f6+004+0f4+0010+0fc+0012+0f6+004+0f4+0010+0fc+0012+"
+}

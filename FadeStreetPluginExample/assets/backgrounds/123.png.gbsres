@@ -1,0 +1,14 @@
+{
+  "_resourceType": "background",
+  "id": "4e8690dd-a87e-472b-ab4e-affc0912991e",
+  "name": "123",
+  "symbol": "bg_123",
+  "tileColors": "",
+  "filename": "123.png",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "autoColor": true,
+  "monoOverrideId": "25bc615e-79cd-45c8-8cb2-27623ec66db3"
+}

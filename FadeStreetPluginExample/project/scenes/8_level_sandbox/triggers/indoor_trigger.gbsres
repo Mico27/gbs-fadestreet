@@ -1,0 +1,268 @@
+{
+  "_resourceType": "trigger",
+  "id": "839a7c38-8879-46ba-9b65-a0d7590fc2b7",
+  "_index": 5,
+  "symbol": "trigger_5",
+  "prefabId": "",
+  "name": "Indoor Trigger",
+  "x": 2,
+  "y": 10,
+  "width": 6,
+  "height": 6,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 1,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "to",
+              "endpoint": "night",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 11,
+              "steps": 2,
+              "frames": 1,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "keep",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "keep",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": true,
+              "__collapse": true,
+              "night_intensity": 100
+            },
+            "id": "5c95357f-4253-4d8d-ae73-7b2f1ca3971f"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 1,
+              "__collapse": true
+            },
+            "id": "03fc48e5-bad0-431b-9770-70f6fcc4555f"
+          }
+        ]
+      },
+      "id": "a89ae691-9b1b-492e-ba06-ab89b900e066"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 2,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "GF_EVENT_FADE_STREET",
+            "args": {
+              "steps": 2,
+              "frames": 1,
+              "bkg0_start": "keep",
+              "bkg0_end": "dmg",
+              "bkg1_start": "keep",
+              "bkg1_end": "keep",
+              "bkg2_start": "keep",
+              "bkg2_end": "keep",
+              "bkg3_start": "keep",
+              "bkg3_end": "keep",
+              "bkg4_start": "keep",
+              "bkg4_end": "keep",
+              "bkg5_start": "keep",
+              "bkg5_end": "keep",
+              "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg6_end": "b38d4b6b-a42a-4e3b-9690-adf0b486d7a4",
+              "bkg7_start": "keep",
+              "bkg7_end": "keep",
+              "obj0_start": "keep",
+              "obj0_end": "dmg",
+              "obj1_start": "keep",
+              "obj1_end": "keep",
+              "obj2_start": "keep",
+              "obj2_end": "keep",
+              "obj3_start": "keep",
+              "obj3_end": "keep",
+              "obj4_start": "keep",
+              "obj4_end": "keep",
+              "obj5_start": "keep",
+              "obj5_end": "keep",
+              "obj6_start": "keep",
+              "obj6_end": "keep",
+              "obj7_start": "keep",
+              "obj7_end": "keep",
+              "force_initial": false,
+              "no_initial_wait": true,
+              "__collapse": true
+            },
+            "id": "c06abe6b-713e-4947-9034-ce49f779d3ec"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 2,
+              "__collapse": true
+            },
+            "id": "7899060b-dd7b-4f54-98ef-b5f862e3a0f1"
+          }
+        ]
+      },
+      "id": "47f2981f-6eb0-44ba-b88c-69df1a6c12ed"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_UNLOCK"
+      },
+      "id": "62590fa9-f1d1-4491-8711-fe37a7c7725c"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 1,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "from",
+              "endpoint": "night",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 11,
+              "steps": 8,
+              "frames": 1,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "keep",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "keep",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": false,
+              "night_intensity": 100
+            },
+            "id": "45417722-b80c-4b0c-9731-08d09c4f94fc"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 1,
+              "__collapse": true
+            },
+            "id": "9a02ff43-d7b8-47fe-9965-4da608d70fee"
+          }
+        ]
+      },
+      "id": "c60e2105-633f-454b-b578-12d7609a5b2a"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 2,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "GF_EVENT_FADE_STREET",
+            "args": {
+              "steps": 8,
+              "frames": 1,
+              "bkg0_start": "keep",
+              "bkg0_end": "dmg",
+              "bkg1_start": "keep",
+              "bkg1_end": "keep",
+              "bkg2_start": "keep",
+              "bkg2_end": "keep",
+              "bkg3_start": "keep",
+              "bkg3_end": "keep",
+              "bkg4_start": "keep",
+              "bkg4_end": "keep",
+              "bkg5_start": "keep",
+              "bkg5_end": "keep",
+              "bkg6_start": "b38d4b6b-a42a-4e3b-9690-adf0b486d7a4",
+              "bkg6_end": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg7_start": "keep",
+              "bkg7_end": "keep",
+              "obj0_start": "keep",
+              "obj0_end": "dmg",
+              "obj1_start": "keep",
+              "obj1_end": "keep",
+              "obj2_start": "keep",
+              "obj2_end": "keep",
+              "obj3_start": "keep",
+              "obj3_end": "keep",
+              "obj4_start": "keep",
+              "obj4_end": "keep",
+              "obj5_start": "keep",
+              "obj5_end": "keep",
+              "obj6_start": "keep",
+              "obj6_end": "keep",
+              "obj7_start": "keep",
+              "obj7_end": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "6af5cbbf-8ea0-4c1a-abb2-c464faa83c87"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 2,
+              "__collapse": false
+            },
+            "id": "3c4d5139-49bd-476e-b73d-94dc2a0c45a7"
+          }
+        ]
+      },
+      "id": "84007917-612a-4a99-952c-cba33290b9e4"
+    }
+  ]
+}

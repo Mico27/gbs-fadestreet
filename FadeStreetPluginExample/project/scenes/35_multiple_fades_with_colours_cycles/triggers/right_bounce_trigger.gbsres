@@ -1,0 +1,65 @@
+{
+  "_resourceType": "trigger",
+  "id": "caace371-c5da-4c91-a705-3ee46bd6031b",
+  "_index": 1,
+  "symbol": "trigger_7",
+  "prefabId": "",
+  "name": "Right Bounce Trigger",
+  "x": 19,
+  "y": 16,
+  "width": 1,
+  "height": 22,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "variable",
+          "value": "L0"
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "2",
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "bab258c1-0cb7-42c2-b1be-ac3e42d1500f"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "4",
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "0102e1b3-47a6-4c40-83a4-95964bcd2aa2"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L0",
+              "value": {
+                "type": "true"
+              },
+              "__collapse": true
+            },
+            "id": "945268db-dac5-4bdc-95c1-a94b2ec91d2c"
+          }
+        ]
+      },
+      "id": "407e86f8-5dc4-48a7-8c2d-b2f1c29ac908"
+    }
+  ],
+  "leaveScript": []
+}

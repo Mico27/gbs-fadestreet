@@ -1,0 +1,114 @@
+{
+  "_resourceType": "trigger",
+  "id": "dcc20691-1bfa-4849-9115-aba2fd16d67b",
+  "_index": 3,
+  "symbol": "trigger_3",
+  "name": "Green Player Trigger",
+  "x": 49,
+  "y": 17,
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "1"
+          },
+          "valueB": {
+            "type": "false"
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "1",
+              "value": {
+                "type": "true"
+              },
+              "__collapse": true
+            },
+            "id": "018c1f76-1b1f-416e-8d6b-363470d8df1b"
+          },
+          {
+            "command": "EVENT_SET_TIMER_SCRIPT",
+            "args": {
+              "timer": 1,
+              "duration": 0,
+              "frames": 30,
+              "__scriptTabs": "end",
+              "__collapse": false
+            },
+            "children": {
+              "script": [
+                {
+                  "command": "GF_EVENT_FADE_STREET",
+                  "args": {
+                    "steps": 8,
+                    "frames": 6,
+                    "bkg0_start": "keep",
+                    "bkg0_end": "dmg",
+                    "bkg1_start": "keep",
+                    "bkg1_end": "keep",
+                    "bkg2_start": "keep",
+                    "bkg2_end": "keep",
+                    "bkg3_start": "keep",
+                    "bkg3_end": "keep",
+                    "bkg4_start": "keep",
+                    "bkg4_end": "keep",
+                    "bkg5_start": "keep",
+                    "bkg5_end": "keep",
+                    "bkg6_start": "keep",
+                    "bkg6_end": "keep",
+                    "bkg7_start": "keep",
+                    "bkg7_end": "keep",
+                    "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+                    "obj0_end": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+                    "obj1_start": "keep",
+                    "obj1_end": "keep",
+                    "obj2_start": "keep",
+                    "obj2_end": "keep",
+                    "obj3_start": "keep",
+                    "obj3_end": "keep",
+                    "obj4_start": "keep",
+                    "obj4_end": "keep",
+                    "obj5_start": "keep",
+                    "obj5_end": "keep",
+                    "obj6_start": "keep",
+                    "obj6_end": "keep",
+                    "obj7_start": "keep",
+                    "obj7_end": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true
+                  },
+                  "id": "c9e2e96d-38b1-4f5b-b017-5066bf8c49a4"
+                },
+                {
+                  "command": "EVENT_TIMER_DISABLE",
+                  "args": {
+                    "timer": 1,
+                    "__collapse": true
+                  },
+                  "id": "9f0c3629-1017-4632-9f96-7b2625da29e8"
+                }
+              ]
+            },
+            "id": "5e14d692-df69-4c19-be81-1b9cd640be36"
+          }
+        ],
+        "false": []
+      },
+      "id": "ea108d0d-2312-42d0-ab0d-00b6b7554422"
+    }
+  ],
+  "leaveScript": []
+}

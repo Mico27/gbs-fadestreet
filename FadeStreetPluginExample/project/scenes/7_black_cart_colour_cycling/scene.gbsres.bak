@@ -1,0 +1,65 @@
+{
+  "_resourceType": "scene",
+  "id": "9ea046a7-a928-4300-8474-8d1a4267826c",
+  "_index": 8,
+  "type": "TOPDOWN",
+  "name": "[7] \"Black Cart\" Colour Cycling",
+  "symbol": "scene_9",
+  "notes": "This scene does colour cyling in both colour and monochome modes.\n\nYou'll see the monochrome version if you switch to monochrome mode and start in scene \"Extras: DMG Fade\". \n\nSee that scene for more information about DMG compatability.",
+  "labelColor": "orange",
+  "x": 432,
+  "y": 368,
+  "width": 40,
+  "height": 36,
+  "backgroundId": "ae87f551-78c9-4bda-82e0-dd9d6293f6bf",
+  "tilesetId": "",
+  "paletteIds": [
+    "534839c7-c257-4474-a4aa-614e686b52ce",
+    "444378f7-9a03-40b9-89a2-917196978e8c",
+    "ecbff8d5-291b-4be5-bf6f-ed319764d66c",
+    "55fbf6d2-7c8b-4777-afb6-c490cf259c62",
+    "3610b7f1-b597-4c0d-a1e3-2d2678e81af9",
+    "1c54c281-bf9f-4f87-8444-e87e4c1553d5"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "bf2eefec-9773-4344-bb4a-a36a6cf409d2"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "62a9d27d-c838-481d-b259-13ad1101e958",
+        "__collapse": true
+      },
+      "id": "f514793e-3d14-46d3-883f-ce0064175894"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "4a735383-6295-4c2d-bb8b-d8810aa91590",
+        "__collapse": true
+      },
+      "id": "1f7ac30b-1d00-47bd-99db-de31ef14e633"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "c20eb454-e180-466d-a5e8-d063255516f1",
+        "__collapse": true
+      },
+      "id": "3ca6f23f-d69f-40a6-b072-8598822accba"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "005a0+"
+}

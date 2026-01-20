@@ -1,0 +1,9 @@
+{
+  "_resourceType": "sound",
+  "id": "f7bcb3dd-7d86-42b7-8e5d-60e7ce6fab4a",
+  "name": "hammered.sav",
+  "symbol": "sound_hammered_sav",
+  "type": "fxhammer",
+  "numEffects": 10,
+  "filename": "hammered.sav"
+}

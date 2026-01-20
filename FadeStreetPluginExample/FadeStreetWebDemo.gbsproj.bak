@@ -1,0 +1,8 @@
+{
+  "_resourceType": "project",
+  "name": "FadeStreetDemo",
+  "author": "gearfo",
+  "notes": "Version 12.1 [2024-September-16]\n\nThis is the demo project for Fade Street. It builds the demo ROM that plays on the web page at  https://gearfo.itch.io/fade-street. (That's also where you can find the most up to date version of the plugin).\n\nFade Street is a plugin for GB Studio that adds 23 new events to GB Studio to manage colours, as well as making some changes/improvements to how the engine loads colours. You can find a longer introduction with more background information in the quick start guide.\n\nAll the new events can be found in the group \"Fade Street\". Five of the events are also listed in the group \"Fade Street - Beginner Friendly\" to highlight that they are easy to get started with.\n\nThis project shows (most of) the events in action, with some explanations and tips in the comments of the scripts.\n\nStart by looking at the scene \"Start Here\", and look at the On Init script for the scene, then the On Update script of the actors.\n\nScenes with coloured labels are part of the main sequence of the demo ROM, while scenes with grey labels don't appear in the demo. You can set the player start position to a grey scene an run the project to see what those scenes contain.\n\nIf you are interested in the original four-colour Game Boy, you should change to monochrome mode in the project settings (Setting->Color Options), and change the start point to scene [9] Extras: DMG Fade. This will allow you to build a Game Boy (DMG) compatible ROM.\n\n-- gearfo\n\n",
+  "_version": "4.2.0",
+  "_release": "10"
+}

@@ -1,0 +1,36 @@
+{
+  "_resourceType": "trigger",
+  "id": "52a198c7-8fc5-4856-bb00-659f87e98081",
+  "_index": 2,
+  "symbol": "trigger_8",
+  "prefabId": "",
+  "name": "Left Bounce Trigger",
+  "x": 31,
+  "y": 16,
+  "width": 1,
+  "height": 22,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "2",
+        "value": {
+          "type": "false"
+        }
+      },
+      "id": "07efa964-7cd4-4b75-850c-9df3f8535684"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "4",
+        "value": {
+          "type": "true"
+        }
+      },
+      "id": "f2434d87-9e96-4517-ab92-0fb27bb07678"
+    }
+  ],
+  "leaveScript": []
+}

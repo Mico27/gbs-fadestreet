@@ -1,0 +1,152 @@
+{
+  "_resourceType": "actor",
+  "id": "a2df088d-daa5-454b-82d0-a4aaaf77d7f1",
+  "_index": 2,
+  "symbol": "actor_2",
+  "prefabId": "",
+  "name": "Hidden Actor Running an On Update script [3]",
+  "x": 27,
+  "y": 8,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "L0",
+        "__collapse": true
+      },
+      "id": "bf528bbe-4dd9-4bbb-9b71-1ba6da657405"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_LOOPING_FADE",
+      "args": {
+        "steps": 40,
+        "frames": 3,
+        "bkg0_start": "keep",
+        "bkg0_end": "dmg",
+        "bkg1_start": "keep",
+        "bkg1_end": "keep",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "88d57c3c-4065-458c-a552-12cfa3f44425",
+        "bkg7_end": "3123b6c3-8ccd-4699-8020-9dcb78c26607",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "__collapse": true
+      },
+      "id": "c0d209a8-8270-4683-9525-eccadfcc7bff"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "L0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "GF_EVENT_FADE_STREET",
+            "args": {
+              "steps": 8,
+              "frames": 6,
+              "bkg0_start": "keep",
+              "bkg0_end": "dmg",
+              "bkg1_start": "keep",
+              "bkg1_end": "keep",
+              "bkg2_start": "keep",
+              "bkg2_end": "keep",
+              "bkg3_start": "keep",
+              "bkg3_end": "keep",
+              "bkg4_start": "keep",
+              "bkg4_end": "keep",
+              "bkg5_start": "keep",
+              "bkg5_end": "keep",
+              "bkg6_start": "keep",
+              "bkg6_end": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "bkg7_start": "88d57c3c-4065-458c-a552-12cfa3f44425",
+              "bkg7_end": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "obj0_start": "keep",
+              "obj0_end": "dmg",
+              "obj1_start": "keep",
+              "obj1_end": "keep",
+              "obj2_start": "keep",
+              "obj2_end": "keep",
+              "obj3_start": "keep",
+              "obj3_end": "keep",
+              "obj4_start": "keep",
+              "obj4_end": "keep",
+              "obj5_start": "keep",
+              "obj5_end": "keep",
+              "obj6_start": "keep",
+              "obj6_end": "keep",
+              "obj7_start": "keep",
+              "obj7_end": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "1a335c0b-c076-4bd0-9aeb-a4ded34ca8dd"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$",
+              "__collapse": true
+            },
+            "id": "7df8a9ed-1aa2-4640-9904-12d311b67b57"
+          }
+        ],
+        "false": []
+      },
+      "id": "a1b66a43-fb8b-4f31-8dfc-a70761602b19"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "25bc615e-79cd-45c8-8cb2-27623ec66db3",
+  "name": "123.mono",
+  "symbol": "bg_123_mono",
+  "tileColors": "",
+  "filename": "123.mono.png",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "autoColor": false
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="86.206mm" height="59.61mm" version="1.1" viewBox="0 0 86.206 59.61" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="Triangle" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g transform="translate(-83.512 -112.65)">
+  <g fill-rule="evenodd">
+   <g stroke="#000" stroke-width=".25">
+    <rect x="85.99" y="128.32" width="9.2604" height="9.2604" fill="#f06"/>
+    <rect x="96.584" y="128.32" width="9.2604" height="9.2604" fill="#054"/>
+    <rect x="107.18" y="128.32" width="9.2604" height="9.2604" fill="#e3d7f4"/>
+    <rect x="117.77" y="128.32" width="9.2604" height="9.2604" fill="#fff"/>
+   </g>
+   <text x="128.42027" y="135.17563" fill="#050101" font-family="Serif" font-size="6.35px" stroke-linecap="round" stroke-linejoin="round" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="128.42027" y="135.17563" fill="#050101" font-family="Serif" font-size="6.35px" text-align="start" text-anchor="start" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">t=0</tspan></text>
+   <g stroke="#000" stroke-width=".25">
+    <rect x="85.99" y="138.92" width="9.2604" height="9.2604" fill="#ff2a7f"/>
+    <rect x="96.584" y="138.92" width="9.2604" height="9.2604" fill="#008066"/>
+    <rect x="107.18" y="138.92" width="9.2604" height="9.2604" fill="#aa87de"/>
+    <rect x="117.77" y="138.92" width="9.2604" height="9.2604" fill="#b3b3b3"/>
+   </g>
+   <text x="129.03624" y="145.76862" fill="#050101" font-family="Serif" font-size="6.35px" stroke-linecap="round" stroke-linejoin="round" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="129.03624" y="145.76862" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">t=1</tspan></text>
+   <g stroke="#000" stroke-width=".25">
+    <rect x="85.99" y="149.51" width="9.2604" height="9.2604" fill="#f59"/>
+    <rect x="96.584" y="149.51" width="9.2604" height="9.2604" fill="#0a8"/>
+    <rect x="107.18" y="149.51" width="9.2604" height="9.2604" fill="#7137c8"/>
+    <rect x="117.77" y="149.51" width="9.2604" height="9.2604" fill="#666"/>
+   </g>
+   <text x="128.5663" y="156.3616" fill="#050101" font-family="Serif" font-size="6.35px" stroke-linecap="round" stroke-linejoin="round" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="128.5663" y="156.3616" fill="#050101" font-family="Serif" font-size="6.35px" text-align="start" text-anchor="start" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">t=2</tspan></text>
+   <g stroke="#000" stroke-width=".25">
+    <rect x="85.99" y="160.1" width="9.2604" height="9.2604" fill="#ff80b2"/>
+    <rect x="96.584" y="160.1" width="9.2604" height="9.2604" fill="#00d4aa"/>
+    <rect x="107.18" y="160.1" width="9.2604" height="9.2604" fill="#442178"/>
+    <rect x="117.77" y="160.1" width="9.2604" height="9.2604"/>
+   </g>
+   <text x="128.54408" y="166.95459" fill="#050101" font-family="Serif" font-size="6.35px" stroke-linecap="round" stroke-linejoin="round" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="128.54408" y="166.95459" fill="#050101" font-family="Serif" font-size="6.35px" text-align="start" text-anchor="start" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">t=3</tspan></text>
+  </g>
+  <g fill="#c83737" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+   <path d="m148.17 168.01v-38.365z"/>
+   <path d="m148.17 129.65v38.365-38.365"/>
+   <g stroke-width="19.9">
+    <path d="m148.17 129.65v38.365"/>
+    <path d="m154.78 129.65v38.365"/>
+    <path d="m154.78 168.01v-38.365"/>
+   </g>
+  </g>
+  <path d="m146.05 133.7v27.695" fill="none" marker-end="url(#Triangle)" stroke="#000" stroke-width=".88055"/>
+  <g fill="#050101" fill-rule="evenodd" font-family="Autoradiographic" font-size="6.35px" stroke-linecap="round" stroke-linejoin="round">
+   <text x="150.62256" y="150.34482" stroke="#000000" style="line-height:1.25" xml:space="preserve"><tspan x="150.62256" y="150.34482" fill="#050101" font-family="Serif" font-size="6.35px" stroke="none" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Time</tspan></text>
+   <g>
+    <text x="86.743576" y="119.72275" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="86.743576" y="119.72275" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Palette Slots</tspan></text>
+    <text x="89.016418" y="126.9078" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="89.016418" y="126.9078" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">0</tspan></text>
+    <text x="100.12322" y="126.99035" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="100.12322" y="126.99035" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">1</tspan></text>
+    <text x="110.35854" y="126.99035" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="110.35854" y="126.99035" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">2</tspan></text>
+    <text x="120.88919" y="126.9078" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="120.88919" y="126.9078" fill="#050101" font-family="Serif" font-size="6.35px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">3</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>

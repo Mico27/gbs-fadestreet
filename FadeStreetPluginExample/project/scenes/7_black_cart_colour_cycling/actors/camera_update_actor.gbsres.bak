@@ -1,0 +1,84 @@
+{
+  "_resourceType": "actor",
+  "id": "c20eb454-e180-466d-a5e8-d063255516f1",
+  "_index": 1,
+  "symbol": "actor_6",
+  "prefabId": "",
+  "name": "Camera Update Actor",
+  "x": 29,
+  "y": 5,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "6c76ee9c-e013-4994-97e6-de5405b1d588"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_CAMERA_MOVE_TO",
+      "args": {
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "speed": 1
+      },
+      "id": "c7eb5ba8-1952-460b-a41d-2c0a9d93d592"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30
+      },
+      "id": "e03af22b-15e7-45b8-ba25-a6dcdfbd11e2"
+    },
+    {
+      "command": "EVENT_CAMERA_MOVE_TO",
+      "args": {
+        "x": {
+          "type": "number",
+          "value": 8
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "speed": 1,
+        "__collapse": true
+      },
+      "id": "22ca6cd7-e788-4e33-a1e9-9070fc5ddcef"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30
+      },
+      "id": "9ce08053-ac1e-46f2-a92e-77e99c668c87"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

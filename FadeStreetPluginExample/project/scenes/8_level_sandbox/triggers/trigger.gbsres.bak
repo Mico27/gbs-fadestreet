@@ -1,0 +1,434 @@
+{
+  "_resourceType": "trigger",
+  "id": "16bc95a7-3361-4ee9-965d-c9b9c67c3305",
+  "_index": 1,
+  "symbol": "trigger_1",
+  "prefabId": "",
+  "name": "",
+  "x": 2,
+  "y": 31,
+  "width": 4,
+  "height": 2,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "The death animation desaturates the background and fades the player to red. Then the scene fades to black.\n\nWe need separate events to handle the player and the background. To get the events running in parallel, we attach them to timer scripts."
+      },
+      "id": "8a829d48-3d17-4c0e-8bbb-97a977cbaa92"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 255,
+        "__collapse": true
+      },
+      "id": "47c2d5ff-5161-4526-ab60-8253b9dd4747"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "Dead",
+        "loopAnim": true,
+        "__collapse": true
+      },
+      "id": "6821cc7f-370b-4166-9be0-b36a0e6e2cbb"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b",
+          "left",
+          "up",
+          "down",
+          "right",
+          "a",
+          "start",
+          "select"
+        ],
+        "override": true,
+        "__scriptTabs": "press",
+        "__collapse": true
+      },
+      "children": {
+        "true": []
+      },
+      "id": "891625f7-f94d-45b0-ad92-239b9e744e4e"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 3,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_SET_TIMER_SCRIPT",
+            "args": {
+              "timer": 1,
+              "duration": 0,
+              "frames": 30,
+              "__scriptTabs": "end",
+              "__collapse": false
+            },
+            "children": {
+              "script": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "1"
+                      },
+                      "valueB": {
+                        "type": "true"
+                      }
+                    },
+                    "__collapseElse": false,
+                    "__collapse": false
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "GF_EVENT_FADE_STREET",
+                        "args": {
+                          "steps": 16,
+                          "frames": 1,
+                          "bkg0_start": "keep",
+                          "bkg0_end": "dmg",
+                          "bkg1_start": "keep",
+                          "bkg1_end": "keep",
+                          "bkg2_start": "keep",
+                          "bkg2_end": "keep",
+                          "bkg3_start": "keep",
+                          "bkg3_end": "keep",
+                          "bkg4_start": "keep",
+                          "bkg4_end": "keep",
+                          "bkg5_start": "keep",
+                          "bkg5_end": "keep",
+                          "bkg6_start": "keep",
+                          "bkg6_end": "keep",
+                          "bkg7_start": "keep",
+                          "bkg7_end": "keep",
+                          "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+                          "obj0_end": "2479cd50-3672-4ce7-ae3b-59b86ab167ef",
+                          "obj1_start": "keep",
+                          "obj1_end": "keep",
+                          "obj2_start": "keep",
+                          "obj2_end": "keep",
+                          "obj3_start": "keep",
+                          "obj3_end": "keep",
+                          "obj4_start": "keep",
+                          "obj4_end": "keep",
+                          "obj5_start": "keep",
+                          "obj5_end": "keep",
+                          "obj6_start": "keep",
+                          "obj6_end": "keep",
+                          "obj7_start": "keep",
+                          "obj7_end": "keep",
+                          "force_initial": true,
+                          "no_initial_wait": false,
+                          "__collapse": true
+                        },
+                        "id": "16c233f1-c02f-470e-91c6-768f98b4ea17"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "GF_EVENT_FADE_STREET",
+                        "args": {
+                          "steps": 16,
+                          "frames": 1,
+                          "bkg0_start": "keep",
+                          "bkg0_end": "dmg",
+                          "bkg1_start": "keep",
+                          "bkg1_end": "keep",
+                          "bkg2_start": "keep",
+                          "bkg2_end": "keep",
+                          "bkg3_start": "keep",
+                          "bkg3_end": "keep",
+                          "bkg4_start": "keep",
+                          "bkg4_end": "keep",
+                          "bkg5_start": "keep",
+                          "bkg5_end": "keep",
+                          "bkg6_start": "keep",
+                          "bkg6_end": "keep",
+                          "bkg7_start": "keep",
+                          "bkg7_end": "keep",
+                          "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+                          "obj0_end": "2479cd50-3672-4ce7-ae3b-59b86ab167ef",
+                          "obj1_start": "keep",
+                          "obj1_end": "keep",
+                          "obj2_start": "keep",
+                          "obj2_end": "keep",
+                          "obj3_start": "keep",
+                          "obj3_end": "keep",
+                          "obj4_start": "keep",
+                          "obj4_end": "keep",
+                          "obj5_start": "keep",
+                          "obj5_end": "keep",
+                          "obj6_start": "keep",
+                          "obj6_end": "keep",
+                          "obj7_start": "keep",
+                          "obj7_end": "keep",
+                          "force_initial": true,
+                          "no_initial_wait": false,
+                          "__collapse": true
+                        },
+                        "id": "a2a54c9d-f254-4dbe-841f-088f2841827b"
+                      }
+                    ]
+                  },
+                  "id": "2ddd923c-130a-40c0-963f-1b1b8b42a531"
+                },
+                {
+                  "command": "EVENT_TIMER_DISABLE",
+                  "args": {
+                    "timer": 1,
+                    "__collapse": true
+                  },
+                  "id": "2052f194-ac3b-4f45-80ee-89c302a17c4f"
+                }
+              ]
+            },
+            "id": "99a53300-fc1a-4a63-8273-36016fb7c0a3"
+          },
+          {
+            "command": "EVENT_SET_TIMER_SCRIPT",
+            "args": {
+              "timer": 2,
+              "duration": 0,
+              "frames": 30,
+              "__scriptTabs": "end",
+              "__collapse": false
+            },
+            "children": {
+              "script": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "to",
+                    "endpoint": "desaturated",
+                    "target_r": 0,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 16,
+                    "frames": 1,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "keep",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true,
+                    "desaturate_intensity": 100
+                  },
+                  "id": "c59bfded-fd5d-4afe-ae1a-24d39a079abc"
+                },
+                {
+                  "command": "EVENT_TIMER_DISABLE",
+                  "args": {
+                    "timer": 2,
+                    "__collapse": true
+                  },
+                  "id": "644e1fee-cb9d-4060-a8ce-8bc1da854670"
+                }
+              ]
+            },
+            "id": "e384b31f-8490-4844-aabb-28e79f37c550"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 1.5,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "23936c93-5562-45ab-ab40-dad5a29dafab"
+          },
+          {
+            "command": "EVENT_SET_TIMER_SCRIPT",
+            "args": {
+              "timer": 1,
+              "duration": 0,
+              "frames": 30,
+              "__scriptTabs": "end",
+              "__collapse": false
+            },
+            "children": {
+              "script": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "to",
+                    "endpoint": "rgb",
+                    "target_r": 31,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 8,
+                    "frames": 6,
+                    "bkg0_start": "keep",
+                    "bkg1_start": "keep",
+                    "bkg2_start": "keep",
+                    "bkg3_start": "keep",
+                    "bkg4_start": "keep",
+                    "bkg5_start": "keep",
+                    "bkg6_start": "keep",
+                    "bkg7_start": "keep",
+                    "obj0_start": "2479cd50-3672-4ce7-ae3b-59b86ab167ef",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true
+                  },
+                  "id": "c2fac06a-bc46-4482-bf8c-fc5e351b62f6"
+                },
+                {
+                  "command": "EVENT_TIMER_DISABLE",
+                  "args": {
+                    "timer": 1,
+                    "__collapse": true
+                  },
+                  "id": "0e53802c-630c-4afa-8fdc-147c1d5681e8"
+                }
+              ]
+            },
+            "id": "2e3b7c40-81df-4bc4-99bc-eac76b2d0514"
+          },
+          {
+            "command": "EVENT_SET_TIMER_SCRIPT",
+            "args": {
+              "timer": 2,
+              "duration": 0,
+              "frames": 30,
+              "__scriptTabs": "end",
+              "__collapse": false
+            },
+            "children": {
+              "script": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_SPECIAL",
+                  "args": {
+                    "startpoint": "desaturated",
+                    "starting_r": 0,
+                    "starting_g": 0,
+                    "starting_b": 0,
+                    "endpoint": "rgb",
+                    "target_r": 31,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 8,
+                    "frames": 6,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg0_end": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg1_end": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg2_end": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg3_end": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg4_end": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg5_end": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+                    "bkg6_end": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "bkg7_end": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "keep",
+                    "obj0_end": "dmg",
+                    "obj1_start": "keep",
+                    "obj1_end": "keep",
+                    "obj2_start": "keep",
+                    "obj2_end": "keep",
+                    "obj3_start": "keep",
+                    "obj3_end": "keep",
+                    "obj4_start": "keep",
+                    "obj4_end": "keep",
+                    "obj5_start": "keep",
+                    "obj5_end": "keep",
+                    "obj6_start": "keep",
+                    "obj6_end": "keep",
+                    "obj7_start": "keep",
+                    "obj7_end": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true,
+                    "starting_desaturate_intensity": 100
+                  },
+                  "id": "d1cb0fa2-4254-4f4e-8c9b-771f3f294c3e"
+                },
+                {
+                  "command": "EVENT_TIMER_DISABLE",
+                  "args": {
+                    "timer": 2,
+                    "__collapse": true
+                  },
+                  "id": "3700f239-5d2b-4faa-870e-9a223da121d4"
+                }
+              ]
+            },
+            "id": "fd2abb95-194e-4cae-8c17-b1ede3e6536c"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 1,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "9b7a221a-ed81-4744-813f-b326c5ff4001"
+          },
+          {
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "b02597d2-3992-48e9-9ee4-44da1888bf00",
+              "x": {
+                "type": "number",
+                "value": 48
+              },
+              "y": {
+                "type": "number",
+                "value": 27
+              },
+              "direction": "",
+              "fadeSpeed": "2",
+              "__collapse": true
+            },
+            "id": "8b6959ca-44a8-4a9d-a994-42cc6c079e73"
+          }
+        ]
+      },
+      "id": "e560190d-db99-46c7-974b-367f2d80b928"
+    }
+  ],
+  "leaveScript": []
+}

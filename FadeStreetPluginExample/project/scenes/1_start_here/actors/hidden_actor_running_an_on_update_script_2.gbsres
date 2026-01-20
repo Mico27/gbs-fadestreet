@@ -1,0 +1,162 @@
+{
+  "_resourceType": "actor",
+  "id": "f7ad8105-634d-40bc-a514-1b37219ae151",
+  "_index": 1,
+  "symbol": "actor_1",
+  "prefabId": "",
+  "name": "Hidden Actor Running an On Update script [2]",
+  "coordinateType": "tiles",
+  "x": 27,
+  "y": 5,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Looping Fade moves from one set of palettes to another and back again. It's automatically loopable just by itself.\n\nThe colour interpolation is also a bit different - the gradient spends more time close to the endpoints than a standard fade, which looks nicer in a loop.\n\nYou could put two standard fades back-to-back and go from A->B and then B->A, and that would also loop, but it would loop a bit different, for that reason.\n\n[It's like the difference between a sine wave (one looping fade) and a triangle wave (two standard fades).]",
+        "__collapse": false
+      },
+      "id": "02fd2933-26d2-4dac-a003-a5018cecbca9"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_LOOPING_FADE",
+      "args": {
+        "steps": 50,
+        "frames": 3,
+        "bkg0_start": "keep",
+        "bkg0_end": "dmg",
+        "bkg1_start": "keep",
+        "bkg1_end": "keep",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "019c4017-9ba3-4f66-9141-1504f8497c4d",
+        "bkg6_end": "8b8ac944-1ed9-4e85-9c43-10dea36f9f70",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "__collapse": true
+      },
+      "id": "538f38d3-24f7-46ef-a0e4-d6f93b7f1837"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "L0",
+        "__collapse": true
+      },
+      "id": "c62a29bb-ac32-4e42-ae47-14a3b837e0d0"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "L0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "GF_EVENT_FADE_STREET",
+            "args": {
+              "steps": 16,
+              "frames": 1,
+              "bkg0_start": "keep",
+              "bkg0_end": "dmg",
+              "bkg1_start": "keep",
+              "bkg1_end": "keep",
+              "bkg2_start": "keep",
+              "bkg2_end": "keep",
+              "bkg3_start": "keep",
+              "bkg3_end": "keep",
+              "bkg4_start": "keep",
+              "bkg4_end": "keep",
+              "bkg5_start": "keep",
+              "bkg5_end": "keep",
+              "bkg6_start": "019c4017-9ba3-4f66-9141-1504f8497c4d",
+              "bkg6_end": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "bkg7_start": "keep",
+              "bkg7_end": "keep",
+              "obj0_start": "keep",
+              "obj0_end": "dmg",
+              "obj1_start": "keep",
+              "obj1_end": "keep",
+              "obj2_start": "keep",
+              "obj2_end": "keep",
+              "obj3_start": "keep",
+              "obj3_end": "keep",
+              "obj4_start": "keep",
+              "obj4_end": "keep",
+              "obj5_start": "keep",
+              "obj5_end": "keep",
+              "obj6_start": "keep",
+              "obj6_end": "keep",
+              "obj7_start": "keep",
+              "obj7_end": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "35721e41-22d5-447e-83d0-7e359cbeb09e"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$",
+              "__collapse": true
+            },
+            "id": "e2881020-d30f-43da-a7ca-ae59bda6485c"
+          }
+        ],
+        "false": []
+      },
+      "id": "c117e570-552e-4fce-9e61-f3947a57449f"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

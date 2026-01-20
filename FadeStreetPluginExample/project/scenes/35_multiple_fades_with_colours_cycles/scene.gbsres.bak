@@ -1,0 +1,160 @@
+{
+  "_resourceType": "scene",
+  "id": "fb647f59-887f-46a9-aa87-498d7055cdaf",
+  "_index": 10,
+  "type": "PLATFORM",
+  "name": "[3.5] Multiple Fades With Colours Cycles",
+  "symbol": "scene_11",
+  "notes": "See scene [3] Multiple Fades With Colour Cycles first.\n\nThis is a demake of the Amiga boing demo.\n\nThe spinning ball is animated using colour cycling.\n\nIt's in a fixed spot on the background, but appears to move because the camera is moving.\n\nThe camera is moving because the (invisible) player is moving. All input is disabled and the triggers bounce the player around by setting the velocity directly. The platformer physics take care of movement and gravity.\n\nThe ball appears to move in the opposite direction that the player is moving. The platformer gravity is therefore reversed in this scene so that the ball seems to fall down towards the ground, rather than up towards the ceiling.\n\nA lot of the work happens in the On Update script of the actor.",
+  "labelColor": "blue",
+  "x": 768,
+  "y": 32,
+  "width": 50,
+  "height": 50,
+  "backgroundId": "2d5b9364-23a9-4d66-b6ab-7e54638c6e3d",
+  "tilesetId": "",
+  "paletteIds": [
+    "313f291c-2721-4127-9348-64bbe62d9bef",
+    "17189296-61a9-48b8-8d57-0520b40e1908"
+  ],
+  "spritePaletteIds": [
+    "17189296-61a9-48b8-8d57-0520b40e1908"
+  ],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "58bcc53e-ccea-472b-95f1-e97cd62bcb5c"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b",
+          "left",
+          "up",
+          "down",
+          "right",
+          "a",
+          "start",
+          "select"
+        ],
+        "override": true,
+        "__scriptTabs": "press",
+        "__collapse": true
+      },
+      "children": {
+        "true": []
+      },
+      "id": "14acb9f6-701d-4491-887d-06db43deeeb5"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_INT16 _plat_grav -100\nVM_SET_CONST_UINT8 _camera_deadzone_y 0   \nVM_SET_CONST_UINT8 _camera_deadzone_x 0   \nVM_SET_CONST_INT16 _pl_vel_x 1500",
+        "__collapse": true
+      },
+      "id": "cc17a48b-1b01-4363-90a9-9439898cc48f"
+    },
+    {
+      "command": "EVENT_RESET_VARIABLES",
+      "args": {
+        "__collapse": true
+      },
+      "id": "5b28ffcd-b250-4a31-a0ee-db6f12fbc6e9"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "2",
+        "value": {
+          "type": "true"
+        },
+        "__collapse": true
+      },
+      "id": "e2aec5cd-4a1f-410a-bfc6-ff7b3bfb9421"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 1,
+        "units": "frames",
+        "__collapse": true
+      },
+      "id": "bdcd9b8b-94b4-432c-bec8-6dc6f906df64"
+    },
+    {
+      "command": "EVENT_PALETTE_SET_BACKGROUND",
+      "args": {
+        "palette0": "keep",
+        "palette1": "17189296-61a9-48b8-8d57-0520b40e1908",
+        "palette2": "keep",
+        "palette3": "keep",
+        "palette4": "keep",
+        "palette5": "keep",
+        "palette6": "keep",
+        "palette7": "keep",
+        "__collapse": true
+      },
+      "id": "930d18ab-f0a2-4d67-8584-c981c6797741"
+    },
+    {
+      "command": "EVENT_PALETTE_SET_SPRITE",
+      "args": {
+        "palette0": "17189296-61a9-48b8-8d57-0520b40e1908",
+        "palette1": "keep",
+        "palette2": "keep",
+        "palette3": "keep",
+        "palette4": "keep",
+        "palette5": "keep",
+        "palette6": "keep",
+        "palette7": "keep",
+        "__collapse": true
+      },
+      "id": "5b13fce5-eb52-43cb-aefb-455d35e6296a"
+    },
+    {
+      "command": "EVENT_ACTOR_ACTIVATE",
+      "args": {
+        "actorId": "0deedfbe-cc89-453c-99c5-1c4013a51578",
+        "__collapse": true
+      },
+      "id": "bb0a2553-bbdb-4919-b58a-861a585be693"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 1,
+        "duration": 15,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": true
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "3",
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "39df02ef-9e93-4aa5-8133-435e1509c29f"
+          }
+        ]
+      },
+      "id": "af0d1c9c-a395-4dc7-98b9-854012a8878d"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

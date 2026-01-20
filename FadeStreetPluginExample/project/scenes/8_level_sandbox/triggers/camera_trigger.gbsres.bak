@@ -1,0 +1,173 @@
+{
+  "_resourceType": "trigger",
+  "id": "e45b1f3f-f9ac-4692-97b9-d86a2f5b7fb2",
+  "_index": 2,
+  "symbol": "trigger_2",
+  "name": "Camera Trigger",
+  "x": 32,
+  "y": 30,
+  "width": 3,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "; don't block the rest of the game while this script runs\nVM_UNLOCK",
+        "__collapse": true
+      },
+      "id": "69988b22-4ef7-4122-a705-1518da605d21"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "1"
+          },
+          "valueB": {
+            "type": "true"
+          }
+        },
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "from",
+              "endpoint": "white",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 0,
+              "steps": 8,
+              "frames": 2,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "e113c136-948c-44e9-a714-7133955480a5"
+          },
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "from",
+              "endpoint": "white",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 0,
+              "steps": 8,
+              "frames": 2,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "7ba3b91e-aa88-45b5-af5a-6046a58c4c43"
+          }
+        ],
+        "false": [
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "from",
+              "endpoint": "white",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 0,
+              "steps": 8,
+              "frames": 2,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "c938dbf1-c707-4cfc-95a0-7a140aba5ee6"
+          },
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "from",
+              "endpoint": "white",
+              "target_r": 0,
+              "target_g": 0,
+              "target_b": 0,
+              "steps": 8,
+              "frames": 2,
+              "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+              "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+              "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+              "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+              "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+              "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+              "bkg6_start": "223775ed-deef-4cc1-9bcd-5403c0f0dc87",
+              "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+              "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "378ff90a-9f20-4071-bc05-d00de720e34f"
+          }
+        ]
+      },
+      "id": "5488edfa-0355-40ee-844d-f9a0753c140f"
+    }
+  ],
+  "leaveScript": []
+}

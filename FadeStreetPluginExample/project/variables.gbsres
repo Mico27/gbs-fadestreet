@@ -1,0 +1,56 @@
+{
+  "_resourceType": "variables",
+  "variables": [
+    {
+      "id": "0",
+      "name": "Camera Toggle",
+      "symbol": "var_camera_toggle"
+    },
+    {
+      "id": "1",
+      "name": "GreenPlayer",
+      "symbol": "var_greenplayer"
+    },
+    {
+      "id": "2",
+      "name": "Amiga/BounceRight",
+      "symbol": "var_amiga_bounceright_0"
+    },
+    {
+      "id": "3",
+      "name": "Amiga/End",
+      "symbol": "var_amiga_end"
+    },
+    {
+      "id": "4",
+      "name": "Amiga/SideSfx",
+      "symbol": "var_amiga_sidesfx"
+    },
+    {
+      "id": "d5bad564-b52f-4099-95f0-658fdaf4fc8c__L0",
+      "name": "Title Loop Counter",
+      "symbol": "var_title_loop_counter"
+    },
+    {
+      "id": "087b130b-be67-4a04-b18c-be1a7299b3de__L0",
+      "name": "Loop Counter",
+      "symbol": "var_loop_counter"
+    },
+    {
+      "id": "f7ad8105-634d-40bc-a514-1b37219ae151__L0",
+      "name": "loop counter",
+      "symbol": "var_loop_counter_0"
+    },
+    {
+      "id": "a2df088d-daa5-454b-82d0-a4aaaf77d7f1__L0",
+      "name": "loop counter",
+      "symbol": "var_loop_counter_1"
+    },
+    {
+      "id": "caace371-c5da-4c91-a705-3ee46bd6031b__L0",
+      "name": "Amiga/Capture Flag",
+      "symbol": "var_amiga_capture_flag"
+    }
+  ],
+  "constants": []
+}

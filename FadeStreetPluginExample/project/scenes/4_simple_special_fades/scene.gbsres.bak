@@ -1,0 +1,476 @@
+{
+  "_resourceType": "scene",
+  "id": "0d1e395c-fcda-4366-b926-b0ec186463a3",
+  "_index": 1,
+  "type": "TOPDOWN",
+  "name": "[4] Simple & Special Fades",
+  "symbol": "scene_2",
+  "notes": "This scene demonstrates the Simple Fade and Special Fade events.\n\nIt's easy to create interesting palette effects with Simple Fade. However, it has one important limitation: when you transition to a special effect palette like desaturated, colourised, inverted, etc., the next transition needs to return to the original palettes.\n\nIt's like setting up a set of 8+8 palettes as a home base; you can leave and move to a special effect, but you have to return home afterwards. A sequence of transitions might look like \n\nNormal -> desaturated -> normal\n\nor \n\nNormal -> colourised -> normal\n\nThe Special Color Fade event exists to give you more flexibility and create more complicated sequences. It's required to create sequences of transitions like:\n\nNormal -> desaturated -> black\n\nor\n\nNormal -> colourised -> a completely different set of palettes.\n\nSpecial Fade can do anything that the Simple and Standard events can. But for most cases, you might find that a more streamlined interface is more convenient to work with.",
+  "labelColor": "purple",
+  "x": 424,
+  "y": 200,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "ae3f56f1-522a-4ad5-bca6-189e720c94d5",
+  "tilesetId": "",
+  "paletteIds": [
+    "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+    "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+    "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+    "4e46cef1-9280-4221-9f0f-04316c52372b",
+    "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+    "ae5690be-6d16-400d-bd09-c7727646f9f4",
+    "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+    "19aa9b95-42c3-4eb4-bde0-4f2195daa63a"
+  ],
+  "spritePaletteIds": [
+    "dce945ff-8cff-4273-9292-c3574ab4b303",
+    "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+    "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+    "be48100b-bd12-4ff6-b032-01e51cb67519",
+    "570d582a-358c-4510-a4cc-bcbd59810685",
+    "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+    "72f4b08b-3ebe-4ff3-8785-e47698ea289f"
+  ],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "ee3b08e4-2cdd-4356-b462-2b867367b016"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "from",
+        "endpoint": "white",
+        "target_r": 31,
+        "target_g": 19,
+        "target_b": 30,
+        "steps": 15,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "8d36f33f-4ee8-44b4-af9d-feaad3e03e86"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "40addd4a-5e81-478d-bf20-ec470e184141"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "To go from the normal palettes to a hue shifted version, we can use a Simple Colour Fade:",
+        "__collapse": false
+      },
+      "id": "ba887de0-73f0-44c0-a6fe-3b2e82f69f4d"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "to",
+        "endpoint": "hue",
+        "target_r": 31,
+        "target_g": 0,
+        "target_b": 0,
+        "steps": 14,
+        "frames": 3,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true,
+        "hue_shift": 180,
+        "night_intensity": 25,
+        "desaturate_intensity": 44
+      },
+      "id": "f0d03b7c-1dcd-41d5-8e54-78293e983824"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "e1b0db0e-698e-49ac-baa8-c103fedc4917"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "from",
+        "endpoint": "hue",
+        "target_r": 31,
+        "target_g": 0,
+        "target_b": 0,
+        "steps": 14,
+        "frames": 3,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true,
+        "hue_shift": 180,
+        "night_intensity": 25,
+        "desaturate_intensity": 44,
+        "__comment": false
+      },
+      "id": "dc6bfcdc-c71f-4d52-b6c1-1a49d0578d2c"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "0d557c26-2546-4c2d-8fc6-b241265841cf"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "to",
+        "endpoint": "night",
+        "target_r": 0,
+        "target_g": 0,
+        "target_b": 0,
+        "steps": 14,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true,
+        "hue_shift": 117,
+        "night_intensity": 75
+      },
+      "id": "0e28dc27-a0a8-49bf-9058-1cc0e4335f4a"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "7e348b3f-8e42-4452-8035-a4de0fe886ae"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "To go directly from a nighttime version of our palettes to a  colourised version, we need to use a Special Colour Fade:",
+        "__collapse": false
+      },
+      "id": "cefdf700-91f7-4440-ba30-5758803c5e80"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_SPECIAL",
+      "args": {
+        "startpoint": "night",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "endpoint": "colourised",
+        "target_r": 18,
+        "target_g": 18,
+        "target_b": 0,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg0_end": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg1_end": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg2_end": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg3_end": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg4_end": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg5_end": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg6_end": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "bkg7_end": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj0_end": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj1_end": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj2_end": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj3_end": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj4_end": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj5_end": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj6_end": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true,
+        "__comment": false,
+        "starting_night_intensity": 75
+      },
+      "id": "c7ccd814-dea8-49d1-974c-96efef4e6d79"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "4ffccb65-3bd4-4b95-83de-9c015c98da38"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "from",
+        "endpoint": "colourised",
+        "target_r": 18,
+        "target_g": 18,
+        "target_b": 0,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "f58fca70-b940-4e61-9c66-2962735b7b8e"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "c385b35b-14d1-47d8-aad5-6561d1a1f792"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "to",
+        "endpoint": "inverted",
+        "target_r": 18,
+        "target_g": 18,
+        "target_b": 0,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "f6e7bace-5dcb-4b05-86fd-00ae2e0115d4"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "66990c58-b6b3-4d14-b59a-7a4216620773"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "from",
+        "endpoint": "inverted",
+        "target_r": 18,
+        "target_g": 18,
+        "target_b": 0,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "keep",
+        "force_initial": false,
+        "no_initial_wait": true,
+        "__collapse": true,
+        "__comment": false
+      },
+      "id": "44fb988a-ed3d-4a6b-8789-9e06d540fd1e"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "3efdd116-5a81-4847-919e-5e2d07a81ea7"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+      "args": {
+        "tofrom": "to",
+        "endpoint": "black",
+        "target_r": 15,
+        "target_g": 29,
+        "target_b": 31,
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "36d5f57a-c9af-4c4f-aeb6-3949d38d0495",
+        "bkg1_start": "7382bde7-2e1e-4563-abdb-7c7f80bddb45",
+        "bkg2_start": "fe72c374-0ba6-43a0-ab04-34a04a36d5c6",
+        "bkg3_start": "4e46cef1-9280-4221-9f0f-04316c52372b",
+        "bkg4_start": "e7f117da-6f2e-451e-9ac9-25a4bff7e2dd",
+        "bkg5_start": "ae5690be-6d16-400d-bd09-c7727646f9f4",
+        "bkg6_start": "67f495c7-08ac-46f9-9ff0-a6b844dae9c5",
+        "bkg7_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj0_start": "dce945ff-8cff-4273-9292-c3574ab4b303",
+        "obj1_start": "19aa9b95-42c3-4eb4-bde0-4f2195daa63a",
+        "obj2_start": "fb95ebb6-c84f-4780-89a2-d789b010d4c4",
+        "obj3_start": "be48100b-bd12-4ff6-b032-01e51cb67519",
+        "obj4_start": "570d582a-358c-4510-a4cc-bcbd59810685",
+        "obj5_start": "097fcb6e-eb65-44aa-b786-34adbf3c7583",
+        "obj6_start": "72f4b08b-3ebe-4ff3-8785-e47698ea289f",
+        "obj7_start": "dmg",
+        "force_initial": false,
+        "no_initial_wait": true,
+        "__collapse": true
+      },
+      "id": "ff1d3f21-2166-400e-93c3-fabf03497380"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "9226f82f-a46a-49a5-aaa8-0825ef9de25e",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "number",
+          "value": 3
+        },
+        "direction": "",
+        "fadeSpeed": "2",
+        "__collapse": true
+      },
+      "id": "c93b3576-a1d6-41c3-bc0b-3af355dd8508"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

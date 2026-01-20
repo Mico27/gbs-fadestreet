@@ -1,0 +1,244 @@
+{
+  "_resourceType": "trigger",
+  "id": "1df922a7-ca6f-4f16-a892-0742baae1e85",
+  "_index": 4,
+  "symbol": "trigger_4",
+  "prefabId": "",
+  "name": "X-ray Trigger",
+  "x": 39,
+  "y": 8,
+  "width": 2,
+  "height": 3,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 1,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end",
+        "__collapse": false
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "true"
+                }
+              },
+              "__collapseElse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "to",
+                    "endpoint": "inverted",
+                    "target_r": 0,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 2,
+                    "frames": 1,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "keep",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": true,
+                    "__collapse": true
+                  },
+                  "id": "f574c380-5c1c-4bcb-8b3f-81206a79f3f0"
+                }
+              ],
+              "false": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "to",
+                    "endpoint": "inverted",
+                    "target_r": 0,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 2,
+                    "frames": 1,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "keep",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": true,
+                    "__collapse": true
+                  },
+                  "id": "69f81dc0-0894-478c-a92e-564470981e05"
+                }
+              ]
+            },
+            "id": "575208f3-ef3a-4cf4-9bf8-2fa6c2ec7e6c"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 1,
+              "__collapse": true
+            },
+            "id": "48dedb06-51cd-426b-a79a-649619b4aca8"
+          }
+        ]
+      },
+      "id": "99807afa-619a-4841-9c6e-78a0d528ccd4"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_UNLOCK",
+        "__collapse": true
+      },
+      "id": "4daaff4d-ec49-459a-8a31-deddfcad2723"
+    },
+    {
+      "command": "EVENT_SET_TIMER_SCRIPT",
+      "args": {
+        "timer": 1,
+        "duration": 0,
+        "frames": 30,
+        "__scriptTabs": "end"
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "true"
+                }
+              },
+              "__collapseElse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "from",
+                    "endpoint": "inverted",
+                    "target_r": 0,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 8,
+                    "frames": 1,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "keep",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "a1997b3e-290f-4c4b-9690-6ef50ee9f139",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true
+                  },
+                  "id": "fe55140c-bcd0-47dc-91c1-fea720556956"
+                }
+              ],
+              "false": [
+                {
+                  "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+                  "args": {
+                    "tofrom": "from",
+                    "endpoint": "inverted",
+                    "target_r": 0,
+                    "target_g": 0,
+                    "target_b": 0,
+                    "steps": 8,
+                    "frames": 1,
+                    "bkg0_start": "f69e6ed9-9fa3-42e9-91e4-519a926d237e",
+                    "bkg1_start": "402347c5-a4f1-4ea8-9aa4-eb02ca89e94f",
+                    "bkg2_start": "c2f73d0d-dafa-4fd0-99bb-91fe5a9c5f49",
+                    "bkg3_start": "434ac181-e52e-40ac-bfa4-79bd562fc70d",
+                    "bkg4_start": "4876217b-6988-4570-abf3-e95c1c72d4d3",
+                    "bkg5_start": "ff9c3e16-4ea0-49e5-8857-8c6880a63665",
+                    "bkg6_start": "keep",
+                    "bkg7_start": "554d41c4-4237-4cf4-ad42-fe8661d6188e",
+                    "obj0_start": "c4c310ec-d46f-4faa-9369-5e8ebe897c37",
+                    "obj1_start": "keep",
+                    "obj2_start": "keep",
+                    "obj3_start": "keep",
+                    "obj4_start": "keep",
+                    "obj5_start": "keep",
+                    "obj6_start": "keep",
+                    "obj7_start": "keep",
+                    "force_initial": false,
+                    "no_initial_wait": false,
+                    "__collapse": true
+                  },
+                  "id": "088a3fc4-d7d2-447b-93e5-55d5cb93b9b6"
+                }
+              ]
+            },
+            "id": "f759f517-d222-406f-b5b2-bd68eb6bf214"
+          },
+          {
+            "command": "EVENT_TIMER_DISABLE",
+            "args": {
+              "timer": 1,
+              "__collapse": true
+            },
+            "id": "482fa46c-ff5e-48b8-89db-7420f479d379"
+          }
+        ]
+      },
+      "id": "08854d2a-4f18-4fbd-8ed0-f148fb38df18"
+    }
+  ]
+}

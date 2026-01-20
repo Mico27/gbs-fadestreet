@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "2d5b9364-23a9-4d66-b6ab-7e54638c6e3d",
+  "name": "amiga",
+  "symbol": "bg_amiga",
+  "tileColors": "012d4+004+012c+007+012a+00a+0127+00b+0127+00c+0126+00c+0126+00c+0126+00c+0126+00b+0128+00a+0129+007+012e+002+014c7+",
+  "filename": "amiga.png",
+  "width": 50,
+  "height": 50,
+  "imageWidth": 400,
+  "imageHeight": 400,
+  "autoColor": false
+}

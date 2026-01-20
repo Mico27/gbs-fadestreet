@@ -1,0 +1,103 @@
+{
+  "_resourceType": "actor",
+  "id": "7afb0f9a-306e-4964-b004-feba487afb33",
+  "_index": 1,
+  "symbol": "actor_13",
+  "prefabId": "",
+  "name": "Water pools actor",
+  "x": 14,
+  "y": 11,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_LOOP_FOR",
+      "args": {
+        "variable": "L0",
+        "from": {
+          "type": "number",
+          "value": 0
+        },
+        "comparison": "<=",
+        "to": {
+          "type": "number",
+          "value": 5
+        },
+        "operation": "+=",
+        "value": {
+          "type": "number",
+          "value": 1
+        },
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "GF_EVENT_FADE_STREET_LOOPING_FADE",
+            "args": {
+              "steps": 51,
+              "frames": 2,
+              "bkg0_start": "keep",
+              "bkg0_end": "dmg",
+              "bkg1_start": "keep",
+              "bkg1_end": "keep",
+              "bkg2_start": "keep",
+              "bkg2_end": "keep",
+              "bkg3_start": "222ebb32-98e6-40e9-b703-ae5ed622080b",
+              "bkg3_end": "097275b8-2598-4eb7-84d6-f9cd96f2af58",
+              "bkg4_start": "keep",
+              "bkg4_end": "keep",
+              "bkg5_start": "keep",
+              "bkg5_end": "keep",
+              "bkg6_start": "keep",
+              "bkg6_end": "keep",
+              "bkg7_start": "keep",
+              "bkg7_end": "keep",
+              "obj0_start": "keep",
+              "obj0_end": "dmg",
+              "obj1_start": "keep",
+              "obj1_end": "keep",
+              "obj2_start": "keep",
+              "obj2_end": "keep",
+              "obj3_start": "keep",
+              "obj3_end": "keep",
+              "obj4_start": "keep",
+              "obj4_end": "keep",
+              "obj5_start": "keep",
+              "obj5_end": "keep",
+              "obj6_start": "keep",
+              "obj6_end": "keep",
+              "obj7_start": "keep",
+              "obj7_end": "keep",
+              "__collapse": true
+            },
+            "id": "362bca68-5e96-4c27-9426-efe71fa48ff8"
+          }
+        ]
+      },
+      "id": "ba4be808-69f2-41aa-868c-3be0c4fea957"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "d54cc17f-616c-454c-ab41-85c7825854c8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

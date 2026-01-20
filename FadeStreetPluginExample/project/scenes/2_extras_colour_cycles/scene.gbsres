@@ -1,0 +1,69 @@
+{
+  "_resourceType": "scene",
+  "id": "70b3d7b1-ccab-4630-b1cb-8e37b27af534",
+  "_index": 4,
+  "type": "TOPDOWN",
+  "name": "[2] Extras: Colour Cycles",
+  "symbol": "scene_5",
+  "notes": "This scene doesn't play in the demo; to view it, drag the player start position into the scene and rebuild the project.\n\nThe colours set in the editor for this scene are different from the ones that appear on-screen This is just to make the layout of the palettes easier to see and edit. The in-game colours are the ones set by Fade Street events.\n\nThere is a more fine-grained pattern in the tiles, which you can see in the monochrome preview below. You can freely change the palettes in the editor to make the smaller pattern visible, without affecting the end result.\n\n--------------------------------------------------------------------------------------------------------------\n\n== Fades with Colours Cycles ==\n\nThe Simple-, Standard-, and Special Fade with Colour Cycle events fade between two palettes exactly like the Simple-, Standard- and Special Fade events.\n\nThe difference is that when you select a palette to fade, you also get the option of adding colours in that palette to a colour cycle.\n\nCheck/uncheck the boxes for each palette to add or remove colours from the cycle.\n\nAt each step of the cycle, the colours rotate through the selected slots, in the order the appear in the list. You can reverse the direction, but you can't reorder the cycle arbitrarily.\n\nThe length of the event is always a multiple of the length of a cycle, so the cycle is loopable. The fade may not be loopable, unless it is also a multiple of the cycle length.\n\nThe event may need to go through multiple iterations of the cycle so that the fade has time to finish.\n\n----------------------------------------------------------------------------\n\nThis scene has two hidden actors, each running a different colour cycle in their On Update scripts. One actor cycles the colours of background palettes 1, 2, 3, and 4, and the other actor cycles the colours of palettes 5 ,6, 7, and 8.",
+  "labelColor": "gray",
+  "x": 64,
+  "y": 200,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "b949f7ae-5fa5-42f1-b5df-a789be054c93",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+    "2caf117a-33ce-47ee-a349-764cb6d9c2d3",
+    "71f84537-c8a8-41f4-8eea-ee3dc5aa334f",
+    "0d80551b-df31-4ad6-a704-65317c454839",
+    "f6d5602c-dbba-4eca-a0cb-1dab09e646df",
+    "2fdef916-0bd0-42d8-8a89-c90db74e17a5",
+    "961096af-ba5d-44d8-a344-86028f56dcfe",
+    "f2bfe89f-8116-4378-9246-866ca7210ae7"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "14ecd7ae-9ab0-4ece-bd38-a3d7b415ecb9"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "247be2d2-8e29-4177-806e-a3124f2cc294",
+        "__collapse": true
+      },
+      "id": "0172fa2d-7638-4ee4-b410-7699256af61e"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "c93c50ee-5f71-404f-ab68-3e4610d4194a",
+        "__collapse": true
+      },
+      "id": "5cfe1e9b-3aef-404f-8df6-8997aa74958f"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_ONE_FOR_ALL",
+      "args": {
+        "target_r": 18,
+        "target_g": 28,
+        "target_b": 26,
+        "__collapse": true
+      },
+      "id": "44c0adcf-d153-48af-bceb-c6eedd88a3ab"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

@@ -1,0 +1,214 @@
+{
+  "_resourceType": "scene",
+  "id": "10b5c649-be10-402d-88a1-5a4e44136a45",
+  "_index": 13,
+  "type": "TOPDOWN",
+  "name": "[7.5] Fade One Colour at a Time",
+  "symbol": "scene_14",
+  "notes": "\"Fade One Colour at a Time\" fades from the start palettes to the end palettes. But the colours don't fade all together. Instead, one group of (1+) colours fades all the way, then the next, then the next.\n\nIn these scene, it's used to create an Iris Out transition. A set of concentric rings is drawn on the background, and we create the iris effect by changing the colour of the rings one at a time.\n\nThis effect could be created by chaining together a series of set palette and wait events, but it's convenient to have it in one event.\n\nThe order of slots to fade is entered by the user as a comma separated list, so\n\"1,2,3\" means fade slot 1 first, then slot 2, then slot 3.\n\nYou can use the vertical bar symbol |  to group slots together so they fade at the same time.\n\"1|2,3|4,5\" would cause slots 1 and 2 to fade together as a group, followed by 3 and 4 together as a group, followed by 5.",
+  "labelColor": "red",
+  "x": 248,
+  "y": 704,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "11fde5f3-2b42-4b14-9f4a-4fb8aaa96570",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+    "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+    "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+    "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+    "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+    "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+    "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+    "a51e870d-5bcb-4b61-abd0-36950ebc9a6d"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "GF_EVENT_FADE_STREET_ONE_FOR_ALL",
+      "args": {
+        "target_r": 0,
+        "target_g": 0,
+        "target_b": 0,
+        "__collapse": true
+      },
+      "id": "02ef49c5-865e-44d1-ab23-7ea1c9fcb9a4"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "9fc7132b-38bb-4cf7-be10-e2c056fa189c"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "e0083fef-b540-4e27-86fd-ef1c3b15c5fc"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Fade in the text. \n\"THE END\" is controlled by the first group of slots, and \"?\" by the second. ",
+        "__collapse": false
+      },
+      "id": "45e4cae9-494f-46a2-8ffe-c5d35f3988db"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_ONE_AT_A_TIME",
+      "args": {
+        "steps": 30,
+        "frames": 1,
+        "bkg0_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg0_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg1_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg1_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg2_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg2_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg3_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg3_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg4_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg4_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg5_start": "keep",
+        "bkg5_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg6_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg6_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg7_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg7_end": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "slot_text": "3|7|11|15|19,\n27|31,",
+        "group_wait": 60,
+        "__collapse": true
+      },
+      "id": "e7eccd8b-5fa8-49ce-8a8b-e131b22cc525"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 1
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "875d1f72-ab24-463d-b7ff-31afa15477ad"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "This event runs the Iris Out effect:",
+        "__collapse": true
+      },
+      "id": "aa48b1f2-4744-46e6-b0d9-ac0cc03022e2"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_ONE_AT_A_TIME",
+      "args": {
+        "steps": 5,
+        "frames": 1,
+        "bkg0_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg0_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg1_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg1_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg2_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg2_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg3_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg3_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg4_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg4_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg5_start": "a51e870d-5bcb-4b61-abd0-36950ebc9a6d",
+        "bkg5_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg6_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg6_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "bkg7_start": "0dc952f1-07c3-46cc-bc5c-4c8adb45fbec",
+        "bkg7_end": "ecfb3380-7275-454e-955a-d6a459fdbb8f",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "slot_text": "23,\n22,\n20,\n21|17|29,\n18|30,\n16|28|12|24,\n13|25,\n14|10|26,\n8,\n9|5,\n6,\n4|0,\n1,\n2,",
+        "group_wait": 0,
+        "__collapse": true
+      },
+      "id": "f12bb806-1a69-4ac8-b607-fb42b7700409"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_ONE_FOR_ALL",
+      "args": {
+        "target_r": 31,
+        "target_g": 0,
+        "target_b": 0,
+        "__collapse": true
+      },
+      "id": "63aa3de5-f778-45df-b2c9-48b144116bcd"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "b02597d2-3992-48e9-9ee4-44da1888bf00",
+        "x": {
+          "type": "number",
+          "value": 48
+        },
+        "y": {
+          "type": "number",
+          "value": 27
+        },
+        "direction": "",
+        "fadeSpeed": "2",
+        "__collapse": true
+      },
+      "id": "5f919396-2527-408f-b2a5-29c26bba84d0"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

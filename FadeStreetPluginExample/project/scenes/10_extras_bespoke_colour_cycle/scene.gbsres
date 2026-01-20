@@ -1,0 +1,120 @@
+{
+  "_resourceType": "scene",
+  "id": "2e9c9835-db19-43cc-ab9c-6bfbabb087d9",
+  "_index": 9,
+  "type": "TOPDOWN",
+  "name": "[10] Extras: Bespoke Colour Cycle",
+  "symbol": "scene_10",
+  "notes": "In this scene, we use Bespoke Colour Cycle to create a gradient that moves across the screen.\n\nThe gradient is 32 colours long, and each bar is 2 pixels wide, so the pattern repeats 2.5 times across the screen. \n\nThe bars are drawn with  a mix of the background and sprite palettes.\n\n==\n\n\nBespoke Colour Fade allows you to enter colours and palette slots manually. \n\nThis has two main uses:\n\n1. You can choose any order of slots you like. This is especially helpful for creating a cycle that moves between the background and sprites (as in this scene).\n\n2. You can create a cycle with a list of colours longer or shorter than the number of slots. i.e. You could cycle 10 colours through 3 or 10 or 15 slots.\n\nThis could be useful for creating lightning or reflection effects, where you want mostly one colour, then a brief flash of a different colour, then mostly one colour again---You could just make a long cycle containing almost entirely one colour with one or two contrasting colours sprinkled in.",
+  "labelColor": "gray",
+  "x": 60,
+  "y": 368,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "82da1ae3-1407-471e-84d5-e335d5451281",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "a9ea9ef2-c85c-416b-9865-27dda7c0fb2b"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Bespoke Colour Cycle tries to handle extra whitespace, trailing commas, or badly formatted colours in user input gracefully.\n\nBut you shouldn't rely on that, try to enter good data."
+      },
+      "id": "d3405a6c-e334-4784-a880-e80bc09eec47"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Here's how the numbering works for palette slots. (N.B. There's a picture in the quick start guide which which shows the numbering system in full.)\n\n- The slots are numbered from 0 to 63\n- Every palette has four slots\n- Background palettes come first (slots 0-31)\n- Sprite palettes come later (slots 32-63)\n- The first colour in each sprite palette is the transparent one.\n\nExamples:\nThe first slot of the first background palette is index 0.\n\nSlots 1, 2, and 3 hold the other colours in the first background palette.\n\nThe last background palette (#8) has slots 28, 29, 30, and 31, corresponding to the \"white\", \"light grey\", \"dark grey\", and \"black\" colours in your artwork, respectively.\n\nThe first sprite palette has slots 32, 33, 34, and 35.\n\nSlot 32 is ignored, because it's invisible.\n\n33, 34, and 35 are the three visible colours of that sprite palette, corresponding to \"white\", \"light grey\" and \"black\" in your artwork.\n\nThe unused slots are: 32, 36, 40, 44, 48, 52, 56, and 60. You can't do anything with them at all because colours for those slots don't even end up on the ROM. They're 100% ignored.\n"
+      },
+      "id": "275f8194-332d-4775-91c5-1b3ef78a4511"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Colours are also entered as a comma-separated list. You have several options for the colour format:\n\nIf the colours are copied from the palettes screen in GB Studio, pick \"GBS representative hex\".\n\nIf the colours are copied from an emulator and have 4 digits, pick \"Game Boy Color 15-bit hex\"\n\nIf you want to enter red, green, and blue components, pick \"RGB components\". (Numbers must be decimal numbers between 0 and 31 inclusive, separated by commas, like \"r0,g0,b0,r1,g1,b1,r2,g2,b2\" etc.)\n\nOtherwise you need \"linear RGB\" or \"sRGB\". Try linear and if it looks wrong, switch to sRGB. These are also interpreted as hexadecimal numbers.\n\nYou can enter all hex values with or without either # or 0x at the start."
+      },
+      "id": "d08c36d7-e6a6-4d36-a859-6a89084f7326"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_BESPOKE_CYCLE",
+      "args": {
+        "startpoint": "rgb",
+        "starting_r": 18,
+        "starting_g": 28,
+        "starting_b": 26,
+        "endpoint": "normal",
+        "target_r": 0,
+        "target_g": 0,
+        "target_b": 0,
+        "fade_steps": 30,
+        "fade_frames": 6,
+        "cycle_frames": 6,
+        "bkg0_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg0_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg1_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg1_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg2_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg2_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg3_start": "162139a7-7f87-4c54-b970-0803eada5e4f",
+        "bkg3_end": "162139a7-7f87-4c54-b970-0803eada5e4f",
+        "bkg4_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg4_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg5_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg5_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg6_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg6_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg7_start": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "bkg7_end": "3881a813-ab3d-47f0-a652-3fc56a68217e",
+        "obj0_start": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj0_end": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj1_start": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj1_end": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj2_start": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj2_end": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj3_start": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj3_end": "0d80551b-df31-4ad6-a704-65317c454839",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "start_colours_text": "#43002a,\n#890027,\n#d9243c,\n#ff6157,\n#ffb762,\n#c76e46,\n#73392e,\n#34111f,\n#030710,\n#273b2d,\n#458239,\n#9cb93b,\n#ffd832,\n#ff823b,\n#d1401f,\n#7c191a,\n#310c1b,\n#833f34,\n#eb9c6e,\n#ffdaac,\n#ffffe4,\n#bfc3c6,\n#6d8a8d,\n#293b49,\n#041528,\n#033e5e,\n#1c92a7,\n#77d6c1,\n#ffe0dc,\n#ff88a9,\n#c03b94,\n#601761,",
+        "cycle_text": "1,2,3,33,\n34,35,6,7,\n9,10,11,37,\n38,39,14,15,\n17,18,19,41,\n42,21,22,23,\n25,26,27,45,\n46,29,30,31,",
+        "end_colours_text": "#43002a,\n#890027,\n#d9243c,\n#ff6157,\n#ffb762,\n#c76e46,\n#73392e,\n#34111f,\n#030710,\n#273b2d,\n#458239,\n#9cb93b,\n#ffd832,\n#ff823b,\n#d1401f,\n#7c191a,\n#310c1b,\n#833f34,\n#eb9c6e,\n#ffdaac,\n#ffffe4,\n#bfc3c6,\n#6d8a8d,\n#293b49,\n#041528,\n#033e5e,\n#1c92a7,\n#77d6c1,\n#ffe0dc,\n#ff88a9,\n#c03b94,\n#601761,",
+        "colour_format": "linear24",
+        "__collapse": true,
+        "__comment": false,
+        "starting_desaturate_intensity": 100,
+        "starting_hue_shift": 0
+      },
+      "id": "897503d5-b8a7-47fa-989f-506929fc7110"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Maybe it sounds complicated, but it's not that complicated. \n\nYou might want to try creating a new scene and building up a bespoke cycle from scratch. Start just by cycling two colours through two slots, then change the slots, then add a third slot, then add more colours, etc.\n\nYou'll get the hang of it."
+      },
+      "id": "66e35d66-9e06-423f-8e72-b9551e4142ff"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

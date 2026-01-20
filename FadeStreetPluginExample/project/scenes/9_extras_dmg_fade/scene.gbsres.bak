@@ -1,0 +1,292 @@
+{
+  "_resourceType": "scene",
+  "id": "649b4a0e-2a2f-4755-bcce-231fcf3abba3",
+  "_index": 5,
+  "type": "TOPDOWN",
+  "name": "[9] Extras: DMG Fade",
+  "symbol": "scene_6",
+  "notes": "This scene is designed for monochrome mode.\n\nTo see it in action, select monochrome mode in the project settings, drag the player start position to this scene, and rebuild the project.\n\nThere are two events usable in monochrome carts:\n-DMG Fade\n-DMG Palette Cycle\n\nDMG Fade has the option to flicker colours to create 7 levels of grey/green instead of the normal four. This effect may look good or bad depending on the type of screen you view it on.",
+  "labelColor": "gray",
+  "x": 768,
+  "y": 456,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "7d9129e2-433e-40f6-8173-876237bd03df",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "73c0a3da-af0b-4fc7-80fe-d9bdee9b9a2f"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Timing for DMG fades works a bit differently than the other events. You select the total number of frames you want the fade to last. Zero frames loads the new palettes instantly.\n\nChoosing the length this way means you can toggle flicker on and off without changing the length of the fade. The number of intermediate steps and their timing is adjusted automatically to match to overall length you ask for.",
+        "__collapse": false
+      },
+      "id": "b653dc82-9e24-41ac-b3ce-aededc4ba7fb"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": true,
+        "use_obp0": true,
+        "use_obp1": true,
+        "startpoint": "white",
+        "start_bgp_0": "0",
+        "start_bgp_1": "2",
+        "start_bgp_2": "4",
+        "start_bgp_3": "6",
+        "start_obp0_0": "0",
+        "start_obp0_1": "2",
+        "start_obp0_3": "6",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "black",
+        "end_bgp_0": "0",
+        "end_bgp_1": "2",
+        "end_bgp_2": "4",
+        "end_bgp_3": "6",
+        "end_obp0_0": "0",
+        "end_obp0_1": "2",
+        "end_obp0_3": "6",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 0,
+        "flicker": false,
+        "force_initial": false,
+        "__collapse": true,
+        "fade_style": "default"
+      },
+      "id": "11bbee6d-f6c9-4640-9eb8-d8af1852f22f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "46314352-8f28-4cb7-bbca-3608ef969560"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "\"Flicker intermediate colours\" means rapidly switching between two colours to create the illusion of a colour in between them.\n\nThe Game Boy has four colours - \"black\", \"dark grey\", \"light grey\", and \"white\".\n\nWe can create smoother fades by blending those colours together. e.g. flickering black and dark grey on alternating frames gives an even darker grey. \n\nOriginal Game Boy screens tend to blend successive frames together, which helps to smooth out the flickering. \n\nNot all emulators and screens blend frames to the same degree as the original hardware, so use this option carefully.",
+        "__collapse": false
+      },
+      "id": "7c836273-32f7-42fd-90b5-163ab2ff1a52"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": true,
+        "use_obp0": false,
+        "use_obp1": false,
+        "startpoint": "black",
+        "start_bgp_0": "0",
+        "start_bgp_1": "2",
+        "start_bgp_2": "4",
+        "start_bgp_3": "6",
+        "start_obp0_0": "0",
+        "start_obp0_1": "2",
+        "start_obp0_3": "6",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "custom",
+        "end_bgp_0": "3",
+        "end_bgp_1": "0",
+        "end_bgp_2": "1",
+        "end_bgp_3": "1",
+        "end_obp0_0": "6",
+        "end_obp0_1": "6",
+        "end_obp0_3": "6",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 90,
+        "flicker": true,
+        "force_initial": false,
+        "__collapse": true,
+        "fade_style": "flicker",
+        "flicker_non_adjacent": false,
+        "screen_colours": "green"
+      },
+      "id": "3ac58bb5-c632-4e90-98de-084e85452437"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 2,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "d2a8e459-7d0d-4819-bc01-df37091b4655"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": true,
+        "use_obp0": false,
+        "use_obp1": false,
+        "startpoint": "custom",
+        "start_bgp_0": "3",
+        "start_bgp_1": "0",
+        "start_bgp_2": "1",
+        "start_bgp_3": "1",
+        "start_obp0_0": "0",
+        "start_obp0_1": "2",
+        "start_obp0_3": "6",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "custom",
+        "end_bgp_0": "3",
+        "end_bgp_1": "0",
+        "end_bgp_2": "3",
+        "end_bgp_3": "0",
+        "end_obp0_0": "0",
+        "end_obp0_1": "2",
+        "end_obp0_3": "6",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 90,
+        "flicker": true,
+        "force_initial": false,
+        "__collapse": true,
+        "fade_style": "flicker",
+        "flicker_non_adjacent": false,
+        "screen_colours": "green"
+      },
+      "id": "7d429b74-a49b-4d96-aff2-f0a7e10697a6"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "1f1349f0-d6d7-4861-bd5d-96915a0ebaff"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": false,
+        "use_obp0": true,
+        "use_obp1": false,
+        "startpoint": "black",
+        "start_bgp_0": "0",
+        "start_bgp_1": "2",
+        "start_bgp_2": "4",
+        "start_bgp_3": "6",
+        "start_obp0_0": "0",
+        "start_obp0_1": "2",
+        "start_obp0_3": "6",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "custom",
+        "end_bgp_0": "6",
+        "end_bgp_1": "0",
+        "end_bgp_2": "2",
+        "end_bgp_3": "2",
+        "end_obp0_0": "3",
+        "end_obp0_1": "3",
+        "end_obp0_3": "1",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 90,
+        "flicker": true,
+        "force_initial": false,
+        "__collapse": true,
+        "fade_style": "flicker",
+        "flicker_non_adjacent": false,
+        "screen_colours": "green"
+      },
+      "id": "f890b99c-b36c-43b1-a5f4-6f74c1879244"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 3,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "75daafc9-8437-48db-940b-58431e7fc3a0"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": true,
+        "use_obp0": true,
+        "use_obp1": false,
+        "startpoint": "custom",
+        "start_bgp_0": "3",
+        "start_bgp_1": "0",
+        "start_bgp_2": "3",
+        "start_bgp_3": "0",
+        "start_obp0_0": "3",
+        "start_obp0_1": "3",
+        "start_obp0_3": "1",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "white",
+        "end_bgp_0": "0",
+        "end_bgp_1": "2",
+        "end_bgp_2": "4",
+        "end_bgp_3": "6",
+        "end_obp0_0": "0",
+        "end_obp0_1": "2",
+        "end_obp0_3": "6",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 90,
+        "flicker": true,
+        "force_initial": false,
+        "__collapse": true,
+        "fade_style": "flicker",
+        "flicker_non_adjacent": false,
+        "screen_colours": "green"
+      },
+      "id": "0f5630c3-5f8f-47f7-b75b-54d9a988a179"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "9ea046a7-a928-4300-8474-8d1a4267826c",
+        "x": {
+          "type": "number",
+          "value": 5
+        },
+        "y": {
+          "type": "number",
+          "value": 6
+        },
+        "direction": "",
+        "fadeSpeed": "2",
+        "__collapse": true
+      },
+      "id": "e0000722-ef4a-4a87-a122-0a044f3678a3"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

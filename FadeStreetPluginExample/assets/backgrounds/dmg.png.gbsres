@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "7d9129e2-433e-40f6-8173-876237bd03df",
+  "name": "dmg",
+  "symbol": "bg_dmg",
+  "tileColors": "",
+  "filename": "dmg.png",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "autoColor": false
+}

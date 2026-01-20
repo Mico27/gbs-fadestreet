@@ -1,0 +1,197 @@
+{
+  "_resourceType": "scene",
+  "id": "770f7236-ee4d-4997-997b-7f0b379b788c",
+  "_index": 12,
+  "type": "TOPDOWN",
+  "name": "[12] Automagic Fades",
+  "symbol": "scene_13",
+  "notes": "There are three \"Automagic\" Fade events.\n\n These events work in both colour and monochrome modes automatically.\n\nIn colour mode, they use the palettes set for each scene in the editor (including Automatic palettes). \n\nThese events have the simplest interfaces, even simpler than the \"Simple\" events.\n\nThere are two drawbacks:\n\n1. The interface gives you less control than some of the other fade events.\n2. The events can use more ROM space than other fade events. If colour mode is enabled, all eight background palettes will always be included in the fade. In mixed (black cart) mode, both DMG and colour fades will be stored in ROM.\n\nSometimes, the effect in colour mode will have a direct analogue in monochrome mode, e.g. fading to black or white. In those cases , you'll get an equivalent effect in either mode.\n\nOther times, the effect will only make sense in colour mode, e.g. desaturation or colourise effects. In those cases, nothing will happen in monochrome mode, but the event will wait for an equivalent amount of time.\n\ne.g.\nCGB 28 frame fade to white <-> DMG 28 frame fade to white\nCGB 28 frame fade to desaturated <-> DMG 28 frame wait only",
+  "labelColor": "gray",
+  "x": 60,
+  "y": 536,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "4e8690dd-a87e-472b-ab4e-affc0912991e",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [
+    "a665d4ba-6722-4b3e-9a29-473fd7a05062",
+    "cf68ec01-b709-4e5b-a439-090d9392654b",
+    "66222961-0da1-4575-b8e3-b0dd542d56cc",
+    "e31c82af-ff63-4efe-b7fd-a4bebe77cd93",
+    "0e972b59-0019-4476-a232-067d17a5175c",
+    "6777e561-5bef-40bf-89ae-2c61a0c25788",
+    "15efa72d-ff23-46ee-916f-b2dc323963f7",
+    "7c691227-b69b-40fe-bcad-21a9a5ef1583"
+  ],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "80a38b1d-bf05-40f0-b0e9-1939c4d7fc28",
+  "script": [
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_FADE_IN",
+      "args": {
+        "startpoint": "White",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "dmg_startpoint": "normal",
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "ebc3fdc3-2fb9-48cb-824e-9bda4c3c13b5"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "265b8f6a-0411-4e96-b73a-7e4d8f741c72"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_SPECIAL",
+      "args": {
+        "startpoint": "normal",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "endpoint": "inverted",
+        "target_r": 0,
+        "target_g": 0,
+        "target_b": 0,
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "2a5c8af0-05f4-4891-b045-9c19efb2db3f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "c6e6b002-f096-4194-9c29-0cc4be51d94d"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_SPECIAL",
+      "args": {
+        "startpoint": "inverted",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "endpoint": "normal",
+        "target_r": 0,
+        "target_g": 0,
+        "target_b": 0,
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "ea2b0533-3d51-48e7-bec5-92e61e4de51c"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "621052b7-aa39-400f-9d1e-f96dbf48bd85"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_SPECIAL",
+      "args": {
+        "startpoint": "normal",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "endpoint": "colourised",
+        "target_r": 13,
+        "target_g": 0,
+        "target_b": 0,
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "110a40ae-8e37-4b5c-a333-a762d4fef5d3"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "d068fb71-8104-48f4-88a3-7ba417140414"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_SPECIAL",
+      "args": {
+        "startpoint": "colourised",
+        "starting_r": 13,
+        "starting_g": 0,
+        "starting_b": 0,
+        "endpoint": "normal",
+        "target_r": 13,
+        "target_g": 0,
+        "target_b": 0,
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "9ef6f8c2-afa2-45ba-89a0-17a6723a8f0c"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "b89fc90a-8688-4d0f-b02f-322cbfbc80fb"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_AUTO_FADE_OUT",
+      "args": {
+        "endpoint": "White",
+        "starting_r": 0,
+        "starting_g": 0,
+        "starting_b": 0,
+        "dmg_endpoint": "normal",
+        "speed": "3",
+        "__collapse": true
+      },
+      "id": "958b4684-3d21-4096-b900-b7a8e528ce40"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "1b332e4a-57e0-44e3-9b7d-d6a4e91501cb"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "770f7236-ee4d-4997-997b-7f0b379b788c",
+        "x": {
+          "type": "number",
+          "value": 9
+        },
+        "y": {
+          "type": "number",
+          "value": 10
+        },
+        "direction": "",
+        "fadeSpeed": "2",
+        "__collapse": true
+      },
+      "id": "35c69b24-0864-4e9d-a0ae-254f796becfe"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "id": "98b3d560-a420-4d76-9cd4-fa3584d52260",
+  "_index": 0,
+  "symbol": "trigger_6",
+  "prefabId": "",
+  "name": "Bottom Bounce Trigger",
+  "x": 0,
+  "y": 15,
+  "width": 50,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_INT16 _plat_vel_y 12000",
+        "__collapse": false
+      },
+      "id": "d37d1cc2-44ef-4751-86a2-9635f9781573"
+    },
+    {
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "f7bcb3dd-7d86-42b7-8e5d-60e7ce6fab4a",
+        "priority": "medium",
+        "pitch": 4,
+        "frequency": 200,
+        "duration": 0.5,
+        "wait": true,
+        "effect": 0,
+        "__collapse": true
+      },
+      "id": "1d38eae5-bb6a-488a-ae4d-b182fec5d1a1"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "4",
+        "value": {
+          "type": "false"
+        },
+        "__collapse": true
+      },
+      "id": "3b5e6698-0260-401d-b8de-504c2218c9ab"
+    }
+  ],
+  "leaveScript": []
+}

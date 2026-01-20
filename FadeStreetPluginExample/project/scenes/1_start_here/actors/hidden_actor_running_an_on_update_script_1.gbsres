@@ -1,0 +1,642 @@
+{
+  "_resourceType": "actor",
+  "id": "d5bad564-b52f-4099-95f0-658fdaf4fc8c",
+  "_index": 0,
+  "symbol": "actor_0",
+  "prefabId": "",
+  "name": "Hidden Actor Running an On Update script [1]",
+  "coordinateType": "tiles",
+  "x": 27,
+  "y": 2,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "911bd917-a619-47d7-92fc-4222b10fd766"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 16,
+        "frames": 3,
+        "bkg0_start": "f6f4eacc-5d67-4499-8285-cb7b48035cce",
+        "bkg0_end": "fcfc3a19-7f21-40bc-8e0d-67c18a5a7289",
+        "bkg1_start": "keep",
+        "bkg1_end": "keep",
+        "bkg2_start": "fb4dc90a-096a-430c-bd26-a62b39632a24",
+        "bkg2_end": "b37d19dd-28b0-4095-aa9a-5da7b8afbb4d",
+        "bkg3_start": "f00b3f46-0c2b-45fb-8541-6ef72e99e849",
+        "bkg3_end": "04fde60f-a9e4-4439-a48a-eb8b79b65fc9",
+        "bkg4_start": "660b275c-237c-40a4-914f-98bff8d68acd",
+        "bkg4_end": "d1b710af-e15f-467b-82c9-69443e28d730",
+        "bkg5_start": "a3d5abb1-0b48-4784-a4c6-e5f8ed3e29e8",
+        "bkg5_end": "7023c436-c740-41c7-8f28-0c0ed69d39e4",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "07a62615-9af0-4b93-a517-81c031953559"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "16312968-d8e7-43dc-9754-bac8bdcf94d9"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 16,
+        "frames": 3,
+        "bkg0_start": "fcfc3a19-7f21-40bc-8e0d-67c18a5a7289",
+        "bkg0_end": "0372b1e3-f6b8-4f4f-a88d-be19f52be492",
+        "bkg1_start": "c8c8e98a-b41a-4cb9-953c-125b45bbba27",
+        "bkg1_end": "cb9527a8-e26b-436a-81db-b8135648bbd5",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "78f17b66-b121-4fe8-b2f7-2856308727cd"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "d67521d4-a5c8-4bdc-b701-0aa57a6f2bef"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "This is where the red triangle dissolves through the purple label:",
+        "__collapse": false
+      },
+      "id": "34fd7a53-6a19-4e41-84ff-e8f761c57e79"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "0372b1e3-f6b8-4f4f-a88d-be19f52be492",
+        "bkg0_end": "c8ad762f-90f7-4ace-b64e-eac0037037f7",
+        "bkg1_start": "cb9527a8-e26b-436a-81db-b8135648bbd5",
+        "bkg1_end": "fabb42b4-e7ae-4092-a06c-e63301bc05d6",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "51b7edbc-a123-4547-b6df-1e503f5d41ca"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "5e2c6c6a-8d14-4da5-98c8-8f77f9f838e3"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 36,
+        "frames": 1,
+        "bkg0_start": "c8ad762f-90f7-4ace-b64e-eac0037037f7",
+        "bkg0_end": "b67763d3-ac54-443b-a6bb-0a1c1b37cbdf",
+        "bkg1_start": "fabb42b4-e7ae-4092-a06c-e63301bc05d6",
+        "bkg1_end": "abc9205d-bc28-4fdf-a438-5c7605321415",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "381d301d-8766-426b-8d71-8523646de554"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "23972ec4-37f7-4c49-897a-8f6ce29ed332"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "b67763d3-ac54-443b-a6bb-0a1c1b37cbdf",
+        "bkg0_end": "fcfc3a19-7f21-40bc-8e0d-67c18a5a7289",
+        "bkg1_start": "abc9205d-bc28-4fdf-a438-5c7605321415",
+        "bkg1_end": "c8c8e98a-b41a-4cb9-953c-125b45bbba27",
+        "bkg2_start": "keep",
+        "bkg2_end": "keep",
+        "bkg3_start": "keep",
+        "bkg3_end": "keep",
+        "bkg4_start": "keep",
+        "bkg4_end": "keep",
+        "bkg5_start": "keep",
+        "bkg5_end": "keep",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "baaa55ca-8fc8-41dd-8f82-743a170ae0b2"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "42c2063b-519d-422c-92a1-1be8b34d5105"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "fcfc3a19-7f21-40bc-8e0d-67c18a5a7289",
+        "bkg0_end": "6fc13903-389b-4ca1-978c-a607a7988904",
+        "bkg1_start": "keep",
+        "bkg1_end": "keep",
+        "bkg2_start": "b37d19dd-28b0-4095-aa9a-5da7b8afbb4d",
+        "bkg2_end": "52773425-7dc6-43a2-b14e-6ad8a793fc59",
+        "bkg3_start": "04fde60f-a9e4-4439-a48a-eb8b79b65fc9",
+        "bkg3_end": "66a5f5d9-0c6d-4d0a-bc59-5d2ab13bb10d",
+        "bkg4_start": "d1b710af-e15f-467b-82c9-69443e28d730",
+        "bkg4_end": "d0cd1635-9240-41d2-b851-0d32b0aacf68",
+        "bkg5_start": "7023c436-c740-41c7-8f28-0c0ed69d39e4",
+        "bkg5_end": "b0933a35-4b5b-462d-b07f-0c9e0a230d7d",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "e252a3c1-0e3d-4403-9ab6-20f6cd40bae6"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "L0",
+        "__collapse": true
+      },
+      "id": "6ccc1371-7d2d-4e84-b0da-dc4cbab85a88"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "L0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "a2df088d-daa5-454b-82d0-a4aaaf77d7f1",
+              "__collapse": true
+            },
+            "id": "76b991e1-aee8-42b6-9f07-37fd1d51e5c0"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "f7ad8105-634d-40bc-a514-1b37219ae151",
+              "__collapse": true
+            },
+            "id": "749cbe2c-953d-46a9-8711-f80d34714eea"
+          },
+          {
+            "command": "EVENT_SOUND_PLAY_EFFECT",
+            "args": {
+              "type": "f7bcb3dd-7d86-42b7-8e5d-60e7ce6fab4a",
+              "priority": "medium",
+              "pitch": 4,
+              "frequency": 200,
+              "duration": 0.5,
+              "wait": true,
+              "effect": 0,
+              "__collapse": true
+            },
+            "id": "fcc67519-7650-4948-976b-886cb8d2e836"
+          },
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "This is the final fade out before changing scenes. \n\nHere, we don't just care about the palettes used in this scene, but also the palettes used in the next scene.\n\nThat's because we're setting the colours that will be visible as the next scene loads.\n\nThe next scene uses 15/16 palette slots, so we will get glitches if we don't set all those palettes to pink before the scene loads.\n\nTo that end, we'll just use a \"Set All Palettes To One Colour\" event to make sure all palettes are pink, even the sprite palettes that weren't used in this scene.\n\n(The sprites will load before the On Init script for the next scene runs, so you can't just rely on setting the right palettes there.)"
+            },
+            "id": "3993fbc6-7d1f-4e19-b60e-e579d6e4954e"
+          },
+          {
+            "command": "GF_EVENT_FADE_STREET_QUICKFADE",
+            "args": {
+              "tofrom": "to",
+              "endpoint": "rgb",
+              "target_r": 31,
+              "target_g": 19,
+              "target_b": 30,
+              "steps": 22,
+              "frames": 3,
+              "bkg0_start": "6fc13903-389b-4ca1-978c-a607a7988904",
+              "bkg1_start": "c8c8e98a-b41a-4cb9-953c-125b45bbba27",
+              "bkg2_start": "52773425-7dc6-43a2-b14e-6ad8a793fc59",
+              "bkg3_start": "66a5f5d9-0c6d-4d0a-bc59-5d2ab13bb10d",
+              "bkg4_start": "d0cd1635-9240-41d2-b851-0d32b0aacf68",
+              "bkg5_start": "b0933a35-4b5b-462d-b07f-0c9e0a230d7d",
+              "bkg6_start": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "bkg7_start": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "obj0_start": "a5e640e5-1c7c-4db6-9663-e14b36bee033",
+              "obj1_start": "keep",
+              "obj2_start": "keep",
+              "obj3_start": "keep",
+              "obj4_start": "keep",
+              "obj5_start": "keep",
+              "obj6_start": "keep",
+              "obj7_start": "keep",
+              "force_initial": false,
+              "no_initial_wait": false,
+              "__collapse": true
+            },
+            "id": "749dfeea-d98f-4d5a-94ce-31a46f84cfc0"
+          },
+          {
+            "command": "GF_EVENT_FADE_STREET_ONE_FOR_ALL",
+            "args": {
+              "target_r": 31,
+              "target_g": 19,
+              "target_b": 30,
+              "__collapse": true
+            },
+            "id": "9061b391-d2fa-462e-9979-690966084366"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": {
+                "type": "number",
+                "value": 0.2
+              },
+              "frames": {
+                "type": "number",
+                "value": 30
+              },
+              "__collapse": true
+            },
+            "id": "b28b2f3e-05fb-4fb8-a6b0-a7924109822c"
+          },
+          {
+            "command": "EVENT_OVERLAY_HIDE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "c6635818-af7c-4448-9150-119eaa805317"
+          },
+          {
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "fb647f59-887f-46a9-aa87-498d7055cdaf",
+              "x": {
+                "type": "number",
+                "value": 11
+              },
+              "y": {
+                "type": "number",
+                "value": 17
+              },
+              "direction": "",
+              "fadeSpeed": 0,
+              "__collapse": true
+            },
+            "id": "f7daca52-3b4e-4ff0-8bfe-f238b3abde4a"
+          }
+        ],
+        "false": []
+      },
+      "id": "0b307ec2-8002-403b-b5cb-5b030963cea4"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "You can hide cuts by manipulating palettes carefully.\n\nHere we place a fullscreen overlay on top of the background. The tilemap on the overlay is different to the one on the background, but both images appear the same because they're shown with a reduced palette to hide the differences.\n\nBut with the overlay visible, we can fade in the X, which wasn't possible before.\n",
+        "__collapse": false
+      },
+      "id": "f596d229-e48e-4bc7-ab9c-86bac41e7cd7"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "\n[Note to advanced users:\n\nan earlier version had a camera move here, where the triangle changed to an X just by moving the camera 32 tiles to the right, but it was glitchy.\n\nIf you want to do this kind of effect, you should use the overlay too, even if a camera jump seems like it should work.\n\nHere's the short version:\n- On CGB, some tiles are in VRAM bank 0 and some tiles are in VRAM bank 1\n- The bank is selected by changing the tile attributes\n- To update the fullscreen 20x18 map (after a camera jump), all the new tile indices are copied, then all the new attributes.\n- There's a brief period of time where the map has the new indices and the old attributes\n- At any map location, if the old tile and the new tile are in different VRAM banks, there may be a glitch at that location. You might see tile 50 from bank 0 instead of tile 50 from bank 1, or tile 7 from bank 1 instead of tile 7 from bank 0, for example.\n\nUsing the overlay means we can load the new tiles and attributes off screen and then show the overlay. This means there's no time where the old attributes and the new indices are being rendered.\n]\n",
+        "__collapse": true
+      },
+      "id": "12a98028-dd6f-4fd5-8e98-95853d94b095"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_UINT8 _show_actors_on_overlay 1\nVM_SET_CONST_UINT8 _win_pos_y 0\nVM_SET_CONST_UINT8 _win_pos_x 0 "
+      },
+      "id": "100fd372-3067-4fb4-80df-1db7d217e4ae"
+    },
+    {
+      "command": "EVENT_OVERLAY_MOVE_TO",
+      "args": {
+        "x": 0,
+        "y": 0,
+        "speed": -3
+      },
+      "id": "684943ca-2198-457f-9ca1-55a21f676d1d"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "703a67ad-cf26-4e18-8596-4f5123cb4ffb"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET",
+      "args": {
+        "steps": 8,
+        "frames": 6,
+        "bkg0_start": "6fc13903-389b-4ca1-978c-a607a7988904",
+        "bkg0_end": "f6f4eacc-5d67-4499-8285-cb7b48035cce",
+        "bkg1_start": "keep",
+        "bkg1_end": "keep",
+        "bkg2_start": "52773425-7dc6-43a2-b14e-6ad8a793fc59",
+        "bkg2_end": "fb4dc90a-096a-430c-bd26-a62b39632a24",
+        "bkg3_start": "66a5f5d9-0c6d-4d0a-bc59-5d2ab13bb10d",
+        "bkg3_end": "f00b3f46-0c2b-45fb-8541-6ef72e99e849",
+        "bkg4_start": "d0cd1635-9240-41d2-b851-0d32b0aacf68",
+        "bkg4_end": "660b275c-237c-40a4-914f-98bff8d68acd",
+        "bkg5_start": "b0933a35-4b5b-462d-b07f-0c9e0a230d7d",
+        "bkg5_end": "a3d5abb1-0b48-4784-a4c6-e5f8ed3e29e8",
+        "bkg6_start": "keep",
+        "bkg6_end": "keep",
+        "bkg7_start": "keep",
+        "bkg7_end": "keep",
+        "obj0_start": "keep",
+        "obj0_end": "dmg",
+        "obj1_start": "keep",
+        "obj1_end": "keep",
+        "obj2_start": "keep",
+        "obj2_end": "keep",
+        "obj3_start": "keep",
+        "obj3_end": "keep",
+        "obj4_start": "keep",
+        "obj4_end": "keep",
+        "obj5_start": "keep",
+        "obj5_end": "keep",
+        "obj6_start": "keep",
+        "obj6_end": "keep",
+        "obj7_start": "keep",
+        "obj7_end": "keep",
+        "force_initial": false,
+        "no_initial_wait": false,
+        "__collapse": true
+      },
+      "id": "b2693616-d083-4cf3-9d7c-f6bf7bb30e9b"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.25
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "__collapse": true
+      },
+      "id": "78107f0f-3e20-4fac-a204-4d2521b322b4"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,99 @@
+{
+  "_resourceType": "scene",
+  "id": "9226f82f-a46a-49a5-aaa8-0825ef9de25e",
+  "_index": 6,
+  "type": "TOPDOWN",
+  "name": "[5] Blend Shift & Auto Colour",
+  "symbol": "scene_7",
+  "notes": "You can use the auto colour option with Fade Street. It will automatically assign palette slots to your background, so you don't have to paint in palettes by hand. \n\nYou still need to set the palette colours using one of the Fade Street events (unless you use an automagic event, which is not discussed here, see scene [12])\n\nThis background is a Moore Curve, generated to use seven CGB palettes for the curve, plus one for the outside border. Because the order of the palettes is very important for the colour cycling effect, I put them in the correct order on the first row of the image (above the visible on-screen area). This forces the auto colour tool to read the palettes in that order.\n\nThe cycles in this scene use a technique called \"blend shifting\"; As the colours rotate through different palette slots, they fade from one colour to the next rather than move in discrete jumps.\n\nBlend shifting is available as an option in the \"Multiple Fades with Colour Cycles\" and  \"Multiple Bespoke Colour Cycles\" events only.\n\nN.B. THIS CREATES VERY LARGE SCRIPTS!\n\nWhen you enable blend shifting, you force the palettes to update every frame. You can very quickly fill up an entire ROM bank with one event.\n\nIf you have large On Init or On Update scripts, you can split them up into multiple custom scripts, and call them using \"Call Script\". This allows GB Studio to store each custom script in a different ROM bank.",
+  "labelColor": "red",
+  "x": 600,
+  "y": 200,
+  "width": 20,
+  "height": 19,
+  "backgroundId": "9025b511-cd16-46c6-836b-b140e44497aa",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": null,
+  "playerSpriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "9ff6e39c-8d25-402a-b691-73addb59eeb6"
+    },
+    {
+      "command": "EVENT_CAMERA_MOVE_TO",
+      "args": {
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 1
+        },
+        "speed": 0,
+        "__collapse": true
+      },
+      "id": "707cc62c-b7f5-48d9-8419-afc13a41146d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ea4656bf-2fa9-48dd-b8c9-f8b437ba6500",
+        "__collapse": true
+      },
+      "id": "627f92f4-9041-4838-945c-28cf57dc6f2f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5731c668-234c-43e1-a478-5d59d9046780",
+        "__collapse": true
+      },
+      "id": "fd83719e-4672-4b03-b47c-6b0bf8d14200"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "8e3b7d8b-769f-4973-85f2-796b7923f630",
+        "__collapse": true
+      },
+      "id": "26f268b8-2d0d-4dc7-9f09-c3e7f85cf24f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "58bc6a75-e45a-47b0-9de0-2ef58c1a48b0",
+        "__collapse": true
+      },
+      "id": "cb550f60-f85d-4528-97d5-93462750a8b6"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "938f223b-2d50-4d9c-90c2-6aa64611cf57",
+        "__collapse": true
+      },
+      "id": "f7d03b8a-9e59-416b-a94f-8fa706d9585d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "cc68f6c0-2f73-4e5c-8523-aeffefbfff5e",
+        "__collapse": true
+      },
+      "id": "4e690666-397a-4093-9319-e777a9febbda"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

@@ -1,0 +1,166 @@
+{
+  "_resourceType": "actor",
+  "id": "4a735383-6295-4c2d-bb8b-d8810aa91590",
+  "_index": 2,
+  "symbol": "actor_11",
+  "prefabId": "",
+  "name": "DMG Update Actor",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_IF_COLOR_SUPPORTED",
+      "args": {
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$",
+              "__collapse": true
+            },
+            "id": "84c62325-8b6b-44b2-a775-8d84ea7e57a6"
+          }
+        ],
+        "false": []
+      },
+      "id": "4b04a0ee-1b8c-4726-9395-e553d1189b39"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_LOOP_FOR",
+      "args": {
+        "variable": "L0",
+        "from": {
+          "type": "number",
+          "value": 0
+        },
+        "comparison": "<=",
+        "to": {
+          "type": "number",
+          "value": 45
+        },
+        "operation": "+=",
+        "value": {
+          "type": "number",
+          "value": 1
+        },
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "GF_EVENT_FADE_STREET_DMG_CYCLE",
+            "args": {
+              "start_bgp_0": "cycle",
+              "start_bgp_1": "cycle",
+              "start_bgp_2": "cycle",
+              "start_bgp_3": "cycle",
+              "start_obp0_0": "0",
+              "start_obp0_1": "1",
+              "start_obp0_3": "3",
+              "start_obp1_0": "0",
+              "start_obp1_1": "2",
+              "start_obp1_3": "3",
+              "reverse": false,
+              "step_frames": 3,
+              "cycle_length": 4,
+              "cycle_colour_0": "0",
+              "cycle_colour_1": "0",
+              "cycle_colour_2": "3",
+              "cycle_colour_3": "3",
+              "cycle_colour_4": "0",
+              "cycle_colour_5": "0",
+              "cycle_colour_6": "0",
+              "cycle_colour_7": "0",
+              "cycle_colour_8": "0",
+              "cycle_colour_9": "0",
+              "cycle_colour_10": "0",
+              "cycle_colour_11": "0",
+              "cycle_colour_12": "0",
+              "cycle_colour_13": "0",
+              "cycle_colour_14": "0",
+              "cycle_colour_15": "0",
+              "__collapse": false
+            },
+            "id": "820911f3-49f3-4a44-b46d-bf78042fa140"
+          }
+        ]
+      },
+      "id": "acb42eb1-0c16-4d01-9935-373c7d932f23"
+    },
+    {
+      "command": "GF_EVENT_FADE_STREET_DMG",
+      "args": {
+        "use_bgp": true,
+        "use_obp0": true,
+        "use_obp1": true,
+        "startpoint": "default",
+        "start_bgp_0": "0",
+        "start_bgp_1": "2",
+        "start_bgp_2": "4",
+        "start_bgp_3": "6",
+        "start_obp0_0": "0",
+        "start_obp0_1": "2",
+        "start_obp0_3": "6",
+        "start_obp1_0": "0",
+        "start_obp1_1": "2",
+        "start_obp1_3": "6",
+        "endpoint": "black",
+        "end_bgp_0": "0",
+        "end_bgp_1": "2",
+        "end_bgp_2": "4",
+        "end_bgp_3": "6",
+        "end_obp0_0": "0",
+        "end_obp0_1": "2",
+        "end_obp0_3": "6",
+        "end_obp1_0": "0",
+        "end_obp1_1": "2",
+        "end_obp1_3": "6",
+        "total_frames": 0,
+        "flicker": false,
+        "force_initial": false,
+        "__collapse": false
+      },
+      "id": "57999be5-13d5-41fc-8cf8-0e3dbb6657b6"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "649b4a0e-2a2f-4755-bcce-231fcf3abba3",
+        "x": {
+          "type": "number",
+          "value": 16
+        },
+        "y": {
+          "type": "number",
+          "value": 15
+        },
+        "direction": "",
+        "fadeSpeed": "2",
+        "__collapse": true
+      },
+      "id": "d30d9667-b1ca-4c7b-a4c8-abb5284469e9"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}
