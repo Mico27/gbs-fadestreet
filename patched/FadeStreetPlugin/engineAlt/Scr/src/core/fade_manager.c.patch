@@ -248,24 +248,22 @@ Index: src\core\fade_manager.c
 -    fade_frames_per_step = fade_speeds[2];
 -    fade_timer = FADED_OUT_FRAME;
 -    fade_running = FALSE;
-+	// reset all palettes to white
-+	DMG_palette[0] = 0x0;
-+	DMG_palette[1] = 0x0;
-+	DMG_palette[2] = 0x0;
++    // reset all palettes to white
++    DMG_palette[0] = 0x0;
++    DMG_palette[1] = 0x0;
++    DMG_palette[2] = 0x0;
  #ifdef CGB
--    if (_is_CGB) {
+     if (_is_CGB) {
 -        ApplyPaletteChangeColor(fade_timer);
 -        return;
--    }
-+	if (_is_CGB) {
-+		memset(SprPalette, 0xff, 64);
-+		memset(BkgPalette, 0xff, 64);
-+		refresh_bkg_palettes = 1;
-+		refresh_obj_palettes = 1;
-+	}
++        memset(SprPalette, 0xff, 64);
++        memset(BkgPalette, 0xff, 64);
++        refresh_bkg_palettes = 1;
++        refresh_obj_palettes = 1;
+     }
  #endif
 -    ApplyPaletteChangeDMG(FADED_OUT_FRAME);
-+	wait_vbl_done();
++    wait_vbl_done();
  }
  
  void fade_in(void) BANKED {
@@ -349,7 +347,7 @@ Index: src\core\fade_manager.c
  
  void fade_setspeed(UBYTE speed) BANKED {
 -    fade_frames_per_step = fade_speeds[speed];
-+	speed;
++    speed;
  }
  
  void fade_in_modal(void) BANKED {

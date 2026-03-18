@@ -25,99 +25,99 @@
 
 void set_single_sprite_colour(SCRIPT_CTX *THIS) OLDCALL BANKED
 {
-	uint8_t pal = *((uint8_t *)VM_REF_TO_PTR(FN_ARG0));
-	uint8_t index = *((uint8_t *)VM_REF_TO_PTR(FN_ARG1));
-	palette_color_t rgb = *((palette_color_t *) VM_REF_TO_PTR(FN_ARG2));
-	// update palette right now:
-	set_sprite_palette_entry(pal, index, rgb);
-	// also update the buffer, so our colour isn't overwritten later:
-	((palette_color_t *) SprPalette)[pal * 4 + index] = rgb;
-	return;
+    uint8_t pal = *((uint8_t *)VM_REF_TO_PTR(FN_ARG0));
+    uint8_t index = *((uint8_t *)VM_REF_TO_PTR(FN_ARG1));
+    palette_color_t rgb = *((palette_color_t *) VM_REF_TO_PTR(FN_ARG2));
+    // update palette right now:
+    set_sprite_palette_entry(pal, index, rgb);
+    // also update the buffer, so our colour isn't overwritten later:
+    ((palette_color_t *) SprPalette)[pal * 4 + index] = rgb;
+    return;
 }
 
 void set_single_bkg_colour(SCRIPT_CTX *THIS) OLDCALL BANKED
 {
-	uint8_t pal = *((uint8_t *)VM_REF_TO_PTR(FN_ARG0));
-	uint8_t index = *((uint8_t *)VM_REF_TO_PTR(FN_ARG1));
-	palette_color_t rgb = *((palette_color_t *) VM_REF_TO_PTR(FN_ARG2));
-	// update palette right now:
-	set_bkg_palette_entry(pal, index, rgb); 
-	// also update the buffer, so our colour isn't overwritten later:
-	((palette_color_t *) BkgPalette)[pal * 4 + index] = rgb;
-	return;
+    uint8_t pal = *((uint8_t *)VM_REF_TO_PTR(FN_ARG0));
+    uint8_t index = *((uint8_t *)VM_REF_TO_PTR(FN_ARG1));
+    palette_color_t rgb = *((palette_color_t *) VM_REF_TO_PTR(FN_ARG2));
+    // update palette right now:
+    set_bkg_palette_entry(pal, index, rgb);
+    // also update the buffer, so our colour isn't overwritten later:
+    ((palette_color_t *) BkgPalette)[pal * 4 + index] = rgb;
+    return;
 }
 
 void set_all_palettes(SCRIPT_CTX *THIS) OLDCALL BANKED
 {
-	palette_color_t c = *((palette_color_t *)VM_REF_TO_PTR(FN_ARG0));
-	palette_color_t *dest = (palette_color_t *) SprPalette;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	dest = (palette_color_t *) BkgPalette;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	*dest++ = c;
-	refresh_bkg_palettes = true;
-	refresh_obj_palettes = true;
-		
+    palette_color_t c = *((palette_color_t *)VM_REF_TO_PTR(FN_ARG0));
+    palette_color_t *dest = (palette_color_t *) SprPalette;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    dest = (palette_color_t *) BkgPalette;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    *dest++ = c;
+    refresh_bkg_palettes = true;
+    refresh_obj_palettes = true;
+
 }
 

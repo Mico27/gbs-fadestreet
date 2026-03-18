@@ -54,9 +54,9 @@ void vm_load_palette(SCRIPT_CTX * THIS, UBYTE mask, UBYTE options) OLDCALL BANKE
         sour++;
     }
     if (is_bkg) {
-	    refresh_bkg_palettes = true;
+        refresh_bkg_palettes = true;
     } else {
-	    refresh_obj_palettes = true;
+        refresh_obj_palettes = true;
     }
     #ifdef SGB
         if ((sgb_changes) && (_is_SGB)) SGBTransferPalettes(sgb_changes);
