@@ -182,3 +182,19 @@
 		</article>
 	</body>
 </html>
+
+---
+
+## Memory Footprint
+
+Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile with GB Studio's build flags, default engine settings). Values are the plugin's *delta* versus the stock engine; DMG build, with CGB noted where it differs. ROM cost lands in banked ROM (GB Studio's autobanker spreads it across switchable banks); using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks.
+
+| | Cost |
+|---|---|
+| WRAM | −2 bytes |
+| ROM | −143 bytes (DMG) / +165 bytes (CGB) |
+
+- **WRAM:** the plugin's fade state is 2 bytes *smaller* than the stock fade manager's.
+- **ROM:** on DMG builds the plugin is a net 143-byte *saving* (the stock fade path it replaces is bigger); on CGB builds the per-channel perceptual fade tables cost a net 165 bytes.
+- **Engine WRAM headroom:** the stock GB Studio 4.3.0 engine leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922 bytes). With this plugin installed roughly **856 bytes** remain. This figure does not depend on how many global variables your project defines: the script memory array has a fixed size of VM_HEAP_SIZE + (VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE) words — 768 + 16 × 64 = 1,792 words (3,584 bytes) with stock engine settings.
+- **SRAM:** not used.
