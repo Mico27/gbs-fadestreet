@@ -21,7 +21,8 @@ This version is a fork of the original Fade Street by [gearfo](https://gearfo.it
 2. [Project Setup](#project-setup)
 3. [Size Limits and Restrictions](#size-limits-and-restrictions)
 4. [Events Reference](#events-reference)
-5. [Memory Footprint](#memory-footprint)
+5. [Media](#media)
+6. [Memory Footprint](#memory-footprint)
 
 ---
 
@@ -125,7 +126,7 @@ The Automagic events are the only ones that work in both colour and monochrome m
 - **The new events use more ROM than the automatic fades.** Fades with more colour steps take more space, and colour cycles can use quite a lot depending on the options chosen.
 - **BlendShift Cycling creates very large scripts**, because it updates palettes every frame.
 - **Multi-effect events run for the least common multiple of their cycle lengths.** If one cycle takes 25 frames and another 50, the event is 50 frames long; if one takes 19 and another 17, the event is 323 frames long. Pick cycle lengths that combine sensibly.
-- **The plugin modifies stock engine files** — `data_manager.c`, `fade_manager.c`, `interrupts.c`, `music_manager.c` and `vm_palette.c`. Any other plugin that modifies these files will not be compatible unless the engine files are merged manually.
+- **The plugin replaces several stock engine files** — the fade manager, palette handling, scene loading, music and the interrupt handlers. Any other plugin that also modifies those parts of the engine will not be compatible unless the engine files are merged by hand.
 
 ---
 
