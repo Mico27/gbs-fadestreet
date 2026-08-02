@@ -1,187 +1,197 @@
-<!DOCTYPE html>
-<html>
-	<body>
-		<article>
-		<section>
-			<h1>An Introduction to Fade Street</h1>
-		</section>
-		<section>
-			<h2>What is Fade Street?</h2>
-			<p>
-			<a href="https://gearfo.itch.io/fade-street"><em>Fade Street</em></a> is a plugin for GB Studio.<label for="mn-version" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-version" class="margin-toggle"/><span class="marginnote">This version is a fork of the originial FadeStreet made by https://gearfo.itch.io/ . This version works for GB Studio 4.2.0 Beta2 (will be updated until the official 4.2.0 is released).<br><br>Take note that this plugin modifies the following engine files: data_manager.c, fade_manager.c, interrupts.c, music_manager.c and vm_palette.c. Any other plugin that modifies these files will not be compatible with FadeStreet (Unless you manually merge the edited engine files).</span> You can use it to create better looking colour fades, as well as many other types of palette effects. It's suitable for use in colour-only games, monochrome-only games, and mixed (black cart) games, although some features are exclusive to certain modes.
-			</p>
-			<p>These are some of the effects you can create using <em>Fade Street</em>:</p>
-			<figure>
-				<div class="collage">
-					<img class="img1" src=".img/tri.webp"></img>
-					<img class="img2" src=".img/ball.webp"></img>
-					<img class="img3" src=".img/snow.webp"></img>
-					<img class="img4" src=".img/face.webp"></img>
-					<img class="img5" src=".img/dmg2.webp"></img>
-					<img class="img6" src=".img/falls.webp"></img>
-					<img class="img7" src=".img/chomp.webp"></img>
-					<img class="img8" src=".img/rain.webp"></img>
-					<img class="img9" src=".img/bars.webp"></img>
-					<img class="img10" src=".img/end.webp"></img>
-					<img class="img11" src=".img/light.webp"></img>
-					<img class="img12" src=".img/dmg.webp"></img>
-					<img class="img13" src=".img/dissolve.webp"></img>
-				</div>
-			</figure>
-		</section>
-		<section>
-			<h2>What happens if you use this plugin</h2>
-				<p>First, all automatic fades, as well as the built-in <em>Fade In</em> and <em>Fade Out</em> events, are disabled. They just do not work at all in any situation.</p>
-				<p>Second, a new event category, <em>Fade Street</em>, is added, with 23 new events to manage colour fades and colour cycles. The new events are better than the defaults.</p>
-			</ol>
-			<p>
-			By default, GB Studio games generate colour fades using a very simple algorithm that can run on a Game Boy.
-			Your PC is a much more powerful computer than a Game Boy, so it can create much better looking and much more complicated colour effects.
-			</p>
-			<p>
-			This is the fundamental concept behind <em>Fade Street</em>: instead of creating colours on-the-fly using the Game Boy CPU<label for="mn-pals" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-pals" class="margin-toggle"/><span class="marginnote">You can use <em>Fade Street</em> without understanding how colours work on the Game Boy and Game Boy Color, but brushing up on the basics wouldn't hurt&mdash;the more you understand, the easier it is to plan more complicated art and effects.<br><br>No knowledge of GBVM is assumed or required. You'll use the GUI events and all the scripts will get compiled behind the scenes.</span>, we calculate them ahead of time on a PC and just store the results on the Game Boy ROM.
-			</p>
-			<p>
-			All the <em>Fade Street</em> events generate GBVM scripts, which contain precalculated colour palettes and exact timing information. Your game no longer needs to calculate any colours at run time; it just runs the script to play back the precalculated effect.
-			</p>
-		</section>
-		<section>
-			<h2>Adding <em>Fade Street</em> to a GB Studio project</h2>
-			<p>To add <em>Fade Street</em> to your GB Studio project, simply copy the directory <code>FadeStreetPlugin/</code> into the <code>plugins/</code> subdirectory of your project.
-			</p>
-			<p>
-			This will add the new events to the <em>Add Event</em> menu for your project, as well as automatically applying the relevant engine modifications when you compile your game.
-			</p>
-		</section>
-		<section>
-			<h2>What are the disadvantages of using Fade Street?</h2>
-			<p>There are a few drawbacks to using <em>Fade Street</em>. First, because the automatic fades are disabled, you need to add events to each scene to manually control the fade in and fade out. This means a few extra clicks to set up each new scene. Some fade events have more options than the default events, which adds a few more clicks on top of that.</p>
-			<p>
-			Second, the new events use more ROM space than the automatic fades.<label for="mn-space" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-space" class="margin-toggle"/><span class="marginnote">If you are a beginner Game Boy developer, do not worry about ROM size.<br><br>You've probably heard a lot of stories about how your favourite game developers worried about ROM size. Those stories get shared a lot, not because data compression and space optimisation is incredibly important for Game Boy development, but because the stories are interesting and easy to understand for a wide audience.<br><br>For GB Studio developers in 2024, ROM size is less relevant than you might expect. If you're making your first game, just worry about creating something (anything).</span> Fades with more colour steps take more ROM space, and some special effects like colour cycles can use quite a lot of ROM space, depending on the options you choose.
-			</p>
-		</section>
-		<section>
-			<h2>What are the advantages of using Fade Street?</h2>
-			<p>
-			At a basic level, all your scene transitions will look better, because the fade in and fade out effects will look better. But the real power of <em>Fade Street</em> comes into play when you move beyond basic fades to more complicated palette effects.
-			</p>
-			<p>The new events enable you to create a huge variety of effects, from day-night cycles, to rain, snow, and water effects, to pseudo-3D effects, to dissolves, and many more. Some of these effects would be difficult or impossible to program using the default GB Studio events.</p>
-		</section>
-		<section>
-			<h2>Fades and colour cycles</h2>
-			<p>The effects that <em>Fade Street</em> can create are broadly divided into two groups: <em>fades</em> and <em>colour cycles</em>.</p>
-			<p>By <em>fades</em>, we mean taking a starting palette and varying the colours smoothly over time until they reach a target palette<label for="mn-fade-img" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-fade-img" class="margin-toggle"/><span class="marginnote"><img src=".img/face.webp"></img><br>The palettes in this image fade from daytime to nighttime to a gold.</br></span>. That includes not only fading in and out to black or white, but also other transitions such as fading from a daytime palette to a nighttime palette, or highlighting a certain area on the screen. This is an example of a fade:</p>
-			<figure>
-				<img src=".img/fade.svg" alt="A diagram showing how one set of colours fades to another over time."></img>
-			</figure>
-			<p>Note that some colours can get darker while others get lighter. Individual colours can also stay the same.</p>
-			<p>By <em>colour cycles</em>,<label for="mn-cycle" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-cycle" class="margin-toggle"/><span class="marginnote"><img src=".img/snow.webp"><br>The snow and lights in this image are animated using colour cycling.<br><br></img>Colour cycling is also known as <em>palette shifting</em> or <em>palette cycling</em>.<br><br>To learn more about the general concept of colour cycling, see the work of <a href="https://www.youtube.com/watch?v=aMcJ1Jvtef0">Mark Ferrari</a>. Bear in mind that graphics on the Game Boy Color are a lot more limited than 256 colour VGA.</span> we mean shuffling around the colours of the on screen palettes in a predetermined order. As a colour moves to different palette slots, this can create a sense of motion on screen, so colour cycles can be useful for animating things that are flowing, spinning, flickering, etc. This is an example of a colour cycle:</p>
-			<figure>
-				<img src=".img/cycle.svg" alt="A diagram showing how colours rotate through palette slots during a colour cycle."></img>
-			</figure>
-			<p>
-			This cycle takes four time steps per iteration. The first iteration ends at t=3, and a second iteration begins at t=4. All cycles created by <em>Fade Street</em> can loop seamlessly in this manner.
-			</p>
-			<p>When an event creates a fade <em>with</em> a colour cycle, that just means that the colours used in the cycle can be faded along with the rest of the palettes. For example, if a waterfall is animated using a colour cycle, we could fade from  day to night without pausing the animation. This is an example of a colour cycle which is faded to white as the cycle progresses:</p>
-			<figure>
-				<img src=".img/fadecycle.svg" alt="A diagram showing how a colour palette is cycled and faded at the same time."></img>
-			</figure>
-		</section>
-		<section>
-			<h2>Simple, standard, special</h2>
-			<p>A lot of the <em>Fade Street</em> events are labelled with these adjectives: <em>Simple</em>, <em>Standard</em>, and <em>Special</em>. These terms just refer to how simple or complex the event options are; the underlying colour calculations and logic remain the same.</p>
-			<p>A <em>Standard</em> fade event lets you choose the palettes at both the start and end the fade.</p>
-			<p>For <em>Simple</em> fades, one endpoint is chosen from a list of presets. This speeds up the process of programming common effects like "Fade to black", etc.</p>
-			<p><em>Special</em> fade events have the most complicated settings, and exist to cover edge cases and bridge the gap between other events. You choose palettes for both endpoints, <em>and</em> you have the option to apply a preset effect to either endpoint.</p>
-		</section>
-		<section>
-			<h2>Bespoke colour cycles</h2>
-			<p>
-			The <em>Simple, Standard, and Special Fade with Colour Cycle</em> events share an important limitation: the order of the palette slots <label for="mn-slot" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-slot" class="margin-toggle"/><span class="marginnote">Where it's important, we'll distinguish between <em>colours</em>&mdash;things like <em>red</em> or RGB(11, 0, 29)&mdash;and <em>palette slots</em>, which is a place for us to store a colour in a palette.<br><br>With the Game Boy Color, we're working with 32 palette slots for the background, and we have a choice of 32,768 colours to put in those slots.</span> in the cycle is fixed, and the number of colours in the cycle must equal the number of slots.
-			</p>
-			<p>In other words, slot 0 of a palette will always come before slot 1. Slots in background palette 5 will always come later than slots in background palette 4. If you have 10 slots included in the cycle, then 10 colours will cycle through those slots.</p>
-			<p>In some cases you will need more flexibility than those limitations allow. In those cases, you can use <em>Bespoke Colour Cycle</em> events. These events let you enter the exact ordering of palette slots to use in the cycle, as well as a list of colours of any length.</p>
-			<h3>Entering palette slots</h3>
-			<p>Palette slots are entered as a comma separated list of base-ten numbers. Slots are numbered from 0&ndash;63, starting at the first slot of the first background palette and ending at the last slot of the eighth sprite palette.</p>
-			<p>This numbering scheme includes the transparent slots of the sprite palettes, but writing to these slots has no effect. The following diagram illustrates how the slots are numbered:</p>
-			<figure>
-				<img src=".img/slots.svg" alt="A diagram showing how palette slots are numbered by bespoke cycle events."></img>
-			</figure>
-			<p>For background palettes, slots 0, 1, 2, and 3 of each palette correspond to GB Studio's white, light grey, dark grey, and black colours, respectively.</p>
-			<p>For sprite palettes, slots 0, 1, 2, and 3 of each palette correspond to GB Studio's transparent, white, light grey, and black colours, respectively.</p>
-			<h3>Entering colours</h3>
-			<p>Colours are also entered as a comma separated list. You have the option of several colour formats to choose from. All the colours in the list must be entered in the same format.</p>
-			<p>If&mdash;and only if&mdash;you want to copy hexadecimal colour values from the GB Studio palettes screen, choose the <em>GBS representative hex</em> option. This option is useful if you want to match colours to existing GB Studio palettes.<p>
-			<p>If you want to copy hexadecimal values from another graphics program, choose either <em>sRGB 24-bit hex</em> or <em>linear RGB 24-bit hex</em>. If you don't know which option to pick, try both: only one will look correct, and that's the one that you should use.<p>
-			<p>To enter RGB components separately, choose <em>RGB components</em>. You must enter three components for each colour, and each component must be an integer between 0 and 31, inclusive.</p>
-			<p>To enter colours in the native Game Boy format, choose <em>Game Boy 15-bit hex</em>. This option may be useful if you want to copy palettes from an emulator.</p>
-			<p>In all cases, a leading <code>#</code> or <code>0x</code> is optional.</p>
-		</section>
-		<section>
-			<h2>Automagic fades</h2>
-			<p>For the most part, Fade Street lets you manage palettes in a way that's completely separate from the default GB Studio behaviour; the palettes that you set for a scene in the GB Studio editor will have no effect on the palette that appear on screen.</p>
-			<p>An exception to this rule comes in the form of the <em>Automagic</em> events: <em>Automagic Fade In</em>, <em>Automagic Fade Out</em> and <em>Automagic Special Fade</em>. These events work directly with the scene palettes set in the GB Studio editor, including automatic background palettes, if present.</p>
-			<p>Another unique feature of these events is that they will work in both colour and monochrome modes. Depending on your project settings, the events will store a monochrome fade, a colour fade, or both on the ROM, and the correct one will be chosen at run time.</p>
-			<p>These events are the closest thing that <em>Fade Street</em> has to a drop-in replacement for the default <em>Fade In</em> and <em>Fade Out</em> events, and they may be especially useful for beginners or people migrating large GB Studio projects.</p>
-		</section>
-		<section>
-			<h2>Monochrome mode</h2>
-			<p>
-			Two events are exclusively for use in monochrome mode: <em>DMG Fade</em> and <em>DMG Palette Cycle</em>.<label for="mn-dmg" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-dmg" class="margin-toggle"/><span class="marginnote"><em>DMG</em> here stands for <em>Dot Matrix Game</em>, a code name for the original 1989 Game Boy. We'll use the term broadly to encompass all monochrome Game Boys, including the Game Boy Pocket and Game Boy Light.<br><br>The <em>Super Game Boy</em> also uses monochrome mode, even if there are obviously colours on screen. Colour mode comes into play when a game explicitly target the extra colour features of the Game Boy Color and later consoles.</span>
-			</p>
-			<p><em>DMG Fade</em> includes the option to flicker intermediate colours. This means rapidly alternating between two colours to create the illusion of a middle colour. Using this method, you can create the appearance of three extra colours in between the four normal shades of grey (seven colours in total), for a smoother colour gradient. However, the effectiveness of this technique strongly depends on the type of screen that it's viewed on.</p>
-			<p>Original Game Boy screens tend to blur successive frames together, making this kind of effect look good. On newer screens, or with certain emulators, it can result in a very unpleasant visible flicker. Use this option with caution.</p>
-		</section>
-		<section>
-			<h2>"Black cart" games</h2>
-			<p>
-			As mentioned above, the <em>Automagic</em> events are the only ones that work in both colour mode and monochrome mode automatically.<label for="mn-cart" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-cart" class="margin-toggle"/><span class="marginnote">Originally, Game Boy games came on cartridges that had a grey shell. When the Game Boy Color was released, games exclusive to that console came in a transparent shell.<br><br>Games with backwards compatability, which could use the new features of the Game Boy Color, but still ran on monochrome Game Boys, came in a coloured shell&mdash;often black.<br><br>The term "black cart" is sometimes used to refer to these backwards compatible games, even though the shells came in various other colours, too.</span>
-			</p>
-			<p>
-			It's possible to use the other events in dual-compatible games, but they need to be wrapped in a <em>If Color Mode Is Available</em> event. Create one fade for monochrome mode, and another fade for colour mode, and use an <em>If Colour Mode Is Available</em> event to choose between them at run time.
-			</p>
-		</section>
-		<section>
-			<h2>Multiple fades or colour cycles in a single event</h2>
-			<p>
-			Sometimes you'll need to have two or more separate fades or colour cycles running at the same time. For example, in a city scene, you might want to animate traffic lights with a slow colour cycle, and a neon sign with a faster cycle.</p>
-			<p>
-			In those cases, you have the option of using the events <em>Multiple Fades With Colour Cycles</em> or <em>Multiple Bespoke Colour Cycles</em> to control several independent palette effects inside one event. Each event has eight tabs, and you can create a different effect in each tab which will run simultaneously with the others.
-			</p>
-			 <p>
-			Using these events can be more CPU efficient because the effects will be combined into one script running in one GBVM thread. It also ensures that all the effects are completely synchronised.
-			</p>
-			<p>
-			The synchronisation can cause issues if the different cycles have different lengths, however. If one cycle takes 25 frames and another takes 50 frames, the overall effect will loop after 50 frames, and the event will be 50 frames long.
-			If one cycle takes 19 frames and another takes 17 frames, the overall effect will take 323 frames to loop, and thus the event will be 323 frames long.<label for="mn-lcm" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-lcm" class="margin-toggle"/><span class="marginnote">We care about the <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least commmon multiple</a> of the cycle lengths.</span>
-			</p>
-			<p>
-			When using these events, you have to pick reasonable values for the cycle lengths.
-			</p>
-			<h3>BlendShift Cycling</h3>
-			<p>
-			These two events also feature the option&mdash;not available in the other cycle events&mdash;to do <em>BlendShift Cycling</em><label for="mn-blend" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-blend" class="margin-toggle"/><span class="marginnote">BlendShift Cycling was described in <a href="http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html">this interview</a> with Mark Ferrari.</span>, where cycle colours fade into one another instead of making discrete jumps.
-			</p>
-			<p>This can greatly enhance certain colour cycling effects, but it forces palettes to update every frame, which can can create very large scripts<label for="mn-banksize" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-banksize" class="margin-toggle"/><span class="marginnote">OK, you have to worry about ROM size a <em>little bit</em>. Don't create scripts that are so big that your game can't compile.</span>. Use it in moderation.</p>
-		</section>
-		<section>
-			<h2>Next Steps</h2>
-			<h3>Learning more</h3>
-			<p>A demo project is included in the <code>FadeStreetPluginExample/</code> directory, which contains examples of most of the <em>Fade Street</em> events in action. That project also has a lot of comments which fill in some more of the practical details of how to use the events.</p>
-			<p>All <em>Fade Street</em> events are listed in the <em>Fade Street</em> group. Additionally, five events are listed separately in the <em>Fade Street - Beginner Friendly</em> group. These events may be some of the easier ones to get started with.</p>
-			<h3>Finding inspiration</h3>
-			<p>In some ways, the challenging part of <em>Fade Street</em> isn't actually using the events, or learning the options; it's knowing <em>when</em> to use them, and understanding the effects you want to create.</p>
-			<p>Among Game Boy Color games, <a href="https://www.youtube.com/watch?v=oPExkCFzuO4&t=273"><em>Shantae</em></a> has great examples of how to use palette fades for artistic effect, but you can find inspiration in lots of other places. Many of the best examples of colour cycling come from systems with better graphics capabilities than the Game Boy Color, like the Amiga, PC, SNES, Mega Drive, etc.</p>
-			<h3>Yes, and...</h3>
-			<p>Almost all of the animations shown here and in the demo project were created entirely using palette effects. That makes them good at highlighting what the plugin does, but it doesn't show you the true limits of what you can achieve in your games. In <em>your</em> game, you'll be able to combine palette effects with sprite animations, tile swapping, submapping, and raster effects<label for="mn-swap" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-swap" class="margin-toggle"/><span class="marginnote">I like to call tile swapping "updating the tile set" and submapping "updating the tile map", because that's what's happening in each case.<br><br>You can see a visualisation of what those methods involve <a href="https://geminorons.neocities.org/wiaf#figJ">here</a>.</span> to create more advanced graphical effects.
-			</p>
-			<p>If you aim high, and experiment a bit, you'll be able to create an even more diverse and impressive range of effects in your games.</p>
-			<p><em>Go n-éirí leat!</em>
-			</p>
-		</section>
-		</article>
-	</body>
-</html>
+# gbs-fadestreet
+
+**Version 4.3.1 — Requires GB Studio ≥ 4.3.0**
+
+[*Fade Street*](https://gearfo.itch.io/fade-street) is a GB Studio plugin for creating better looking colour fades, as well as many other types of palette effect. It is suitable for colour-only games, monochrome-only games, and mixed ("black cart") games, although some features are exclusive to certain modes.
+
+By default, GB Studio generates colour fades with a very simple algorithm that can run on a Game Boy. Your PC is far more powerful, so it can produce much better looking and much more complicated colour effects. That is the idea behind Fade Street: instead of calculating colours on the fly on the Game Boy, they are calculated ahead of time on your PC and the results are stored in the ROM. Your game just plays back the precalculated effect.
+
+No knowledge of GBVM is required — you use the GUI events and the scripts are compiled behind the scenes.
+
+This version is a fork of the original Fade Street by [gearfo](https://gearfo.itch.io/).
+
+<img src=".img/face.webp" width="240"> <img src=".img/snow.webp" width="240"> <img src=".img/light.webp" width="240">
+<img src=".img/falls.webp" width="240"> <img src=".img/dissolve.webp" width="240"> <img src=".img/rain.webp" width="240">
+
+---
+
+## Table of Contents
+
+1. [Concepts](#concepts)
+2. [Project Setup](#project-setup)
+3. [Size Limits and Restrictions](#size-limits-and-restrictions)
+4. [Events Reference](#events-reference)
+5. [Memory Footprint](#memory-footprint)
+
+---
+
+## Concepts
+
+### Fades and colour cycles
+
+The effects Fade Street can create fall into two broad groups.
+
+A **fade** takes a starting palette and varies the colours smoothly over time until they reach a target palette. That includes fading in and out to black or white, but also transitions such as day to night, or highlighting a certain area of the screen. Some colours can get darker while others get lighter, and individual colours can stay the same.
+
+![A diagram showing how one set of colours fades to another over time.](.img/fade.svg)
+
+A **colour cycle** shuffles the colours of the on-screen palettes in a predetermined order. As a colour moves through palette slots it creates a sense of motion, which is useful for animating things that flow, spin or flicker.
+
+![A diagram showing how colours rotate through palette slots during a colour cycle.](.img/cycle.svg)
+
+The cycle above takes four time steps per iteration; the first ends at t=3 and a second begins at t=4. All cycles created by Fade Street loop seamlessly this way.
+
+When an event creates a fade **with** a colour cycle, the colours used in the cycle are faded along with the rest of the palettes — so a waterfall animated by a colour cycle can fade from day to night without pausing its animation.
+
+![A diagram showing how a colour palette is cycled and faded at the same time.](.img/fadecycle.svg)
+
+### Simple, Standard, Special
+
+Many Fade Street events are labelled with one of these words. They describe how complex the event's options are; the underlying colour calculations are the same.
+
+| Label | Options |
+|---|---|
+| **Standard** | You choose the palettes at both the start and the end of the fade. |
+| **Simple** | One endpoint is chosen from a list of presets, which speeds up common effects like "fade to black". |
+| **Special** | The most complicated settings. You choose palettes for both endpoints *and* can apply a preset effect to either one. Useful for edge cases and for bridging the gap between the other events. |
+
+### Bespoke colour cycles
+
+The Simple, Standard and Special *Fade with Colour Cycle* events share a limitation: the order of the palette slots in the cycle is fixed, and the number of colours in the cycle must equal the number of slots. Slot 0 always comes before slot 1; slots in background palette 5 always come after those in palette 4.
+
+When you need more flexibility, the **Bespoke Colour Cycle** events let you enter the exact ordering of palette slots to use, plus a list of colours of any length.
+
+**Entering palette slots.** Slots are a comma-separated list of base-ten numbers, numbered 0–63 from the first slot of the first background palette to the last slot of the eighth sprite palette. The numbering includes the transparent slots of the sprite palettes, but writing to those has no effect.
+
+![A diagram showing how palette slots are numbered by bespoke cycle events.](.img/slots.svg)
+
+For background palettes, slots 0–3 of each palette are GB Studio's white, light grey, dark grey and black. For sprite palettes, slots 0–3 are transparent, white, light grey and black.
+
+**Entering colours.** Colours are also a comma-separated list, all in the same format:
+
+| Format | When to use it |
+|---|---|
+| **GBS representative hex** | Copying hex values from the GB Studio palettes screen, to match existing GB Studio palettes. |
+| **sRGB 24-bit hex** / **linear RGB 24-bit hex** | Copying hex values from another graphics program. If you don't know which, try both — only one will look correct. |
+| **RGB components** | Entering channels separately; three components per colour, each an integer 0–31. |
+| **Game Boy 15-bit hex** | The native Game Boy format, useful for copying palettes from an emulator. |
+
+A leading `#` or `0x` is optional in every hex format.
+
+### Automagic fades
+
+For the most part Fade Street manages palettes completely separately from GB Studio's own behaviour, and the palettes you set for a scene in the editor have no effect on what appears on screen.
+
+The **Automagic** events are the exception. They work directly with the scene palettes set in the GB Studio editor, including automatic background palettes. They also work in both colour and monochrome modes: depending on your project settings they store a monochrome fade, a colour fade, or both, and the correct one is chosen at run time.
+
+These are the closest thing Fade Street has to a drop-in replacement for the default Fade In and Fade Out events, which makes them useful for beginners and for migrating large existing projects.
+
+### Monochrome mode
+
+Two events are exclusively for monochrome mode: **DMG Fade** and **DMG Palette Cycle**.
+
+DMG Fade includes an option to flicker intermediate colours — rapidly alternating between two colours to give the illusion of a third. This can produce three extra shades between the four normal greys, for a smoother gradient.
+
+Original Game Boy screens blur successive frames together, which makes this look good. On newer screens, or in some emulators, it can produce very unpleasant visible flicker. Use it with caution.
+
+<img src=".img/dmg.webp" width="240"> <img src=".img/dmg2.webp" width="240">
+
+### Running several effects at once
+
+Sometimes you need two or more separate fades or colour cycles running at the same time — traffic lights on a slow cycle and a neon sign on a faster one, say. **Multiple Fades With Colour Cycles** and **Multiple Bespoke Colour Cycles** each have eight tabs, one effect per tab, all running simultaneously.
+
+This is more CPU-efficient, because the effects are combined into a single script running in one thread, and it guarantees the effects stay synchronised.
+
+Those two events also offer **BlendShift Cycling**, not available in the other cycle events, where cycle colours fade into one another instead of jumping. It can greatly enhance certain effects, but it forces palettes to update every frame, which creates very large scripts. Use it in moderation.
+
+---
+
+## Project Setup
+
+1. Copy the `FadeStreetPlugin/` directory into your project's `plugins/` subdirectory. This adds the new events to the *Add Event* menu and automatically applies the engine modifications when you compile.
+2. Because automatic fades are disabled, add fade events to each scene to control fade in and fade out manually.
+
+A demo project is included in `FadeStreetPluginExample/`, containing examples of most Fade Street events in action, with comments filling in the practical details.
+
+### Black cart (dual-compatible) games
+
+The Automagic events are the only ones that work in both colour and monochrome mode automatically. The other events can still be used in dual-compatible games by wrapping them in an *If Color Mode Is Available* event: create one fade for monochrome mode and another for colour mode, and let that event choose between them at run time.
+
+---
+
+## Size Limits and Restrictions
+
+- **Automatic fades and the built-in Fade In / Fade Out events are disabled.** They do not work at all in any situation once this plugin is installed. Every scene needs its fades set up manually.
+- **The new events use more ROM than the automatic fades.** Fades with more colour steps take more space, and colour cycles can use quite a lot depending on the options chosen.
+- **BlendShift Cycling creates very large scripts**, because it updates palettes every frame.
+- **Multi-effect events run for the least common multiple of their cycle lengths.** If one cycle takes 25 frames and another 50, the event is 50 frames long; if one takes 19 and another 17, the event is 323 frames long. Pick cycle lengths that combine sensibly.
+- **The plugin modifies stock engine files** — `data_manager.c`, `fade_manager.c`, `interrupts.c`, `music_manager.c` and `vm_palette.c`. Any other plugin that modifies these files will not be compatible unless the engine files are merged manually.
+
+---
+
+## Events Reference
+
+All events appear under the **Fade Street** group. Five of them also appear under **Fade Street - Beginner Friendly** — those are the easiest ones to start with, and are marked below.
+
+### Fades
+
+| Event | Description |
+|---|---|
+| **Simple Fade** ⭐ | Fade between the current palettes and a preset endpoint. |
+| **Standard Fade** ⭐ | Fade between two palettes you choose. |
+| **Special Fade** | Fade between two palettes, with an optional preset effect applied to either endpoint. |
+| **Looping Fade** ⭐ | A standard fade that repeats. |
+| **Looping Special Fade** | A special fade that repeats. |
+| **Single Colour Fade** | Fade a single palette slot. |
+| **Looping Single Colour Fade** | A single-colour fade that repeats. |
+| **Fade One Colour At A Time** | Fade the chosen slots one after another rather than together. |
+| **Volume Fade** | Fade the master volume (left and right), affecting all music and sfx channels. Volume commands inside music and sfx may override the values you set. |
+
+### Fades with colour cycles
+
+| Event | Description |
+|---|---|
+| **Simple Fade with Colour Cycle** | A simple fade running together with a colour cycle. |
+| **Standard Fade with Colour Cycle** | A standard fade running together with a colour cycle. |
+| **Special Fade with Colour Cycle** | A special fade running together with a colour cycle. |
+| **Multiple Fades With Colour Cycles** | Up to eight independent fade-plus-cycle effects in one event, optionally with BlendShift Cycling. |
+
+### Colour cycles
+
+| Event | Description |
+|---|---|
+| **Bespoke Colour Cycle** | A colour cycle with an explicit slot order and a colour list of any length. |
+| **Multiple Bespoke Colour Cycles** | Up to eight independent bespoke cycles in one event, optionally with BlendShift Cycling. |
+
+### Automagic
+
+| Event | Description |
+|---|---|
+| **Automagic Fade In** ⭐ | Fade in using the scene's own palettes as set in the GB Studio editor. Works in both colour and monochrome modes. |
+| **Automagic Fade Out** ⭐ | Fade out using the scene's own palettes. Works in both colour and monochrome modes. |
+| **Automagic Special Effect** | The scene-palette-driven equivalent of a special fade. |
+
+### Monochrome only
+
+| Event | Description |
+|---|---|
+| **DMG Fade** | A fade for monochrome mode, with an option to flicker intermediate shades. |
+| **DMG Palette Cycle** | A colour cycle for monochrome mode. |
+
+### Utilities
+
+| Event | Description |
+|---|---|
+| **Quick Load Palettes** | Load a set of palettes immediately, without a fade. |
+| **Quick Load DMG Palettes** | The monochrome equivalent. |
+| **Set All Palettes to One Colour** | Fill every palette slot with a single colour. |
+
+---
+
+## Media
+
+<img src=".img/tri.webp" width="240"> <img src=".img/ball.webp" width="240"> <img src=".img/chomp.webp" width="240">
+<img src=".img/bars.webp" width="240"> <img src=".img/end.webp" width="240">
 
 ---
 
@@ -195,7 +205,7 @@ Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile 
 | ROM | −143 bytes (DMG) / +165 bytes (CGB) |
 
 - **WRAM:** the plugin's fade state is 2 bytes *smaller* than the stock fade manager's.
-- **ROM:** on DMG builds the plugin is a net 143-byte *saving* (the stock fade path it replaces is bigger); on CGB builds the per-channel perceptual fade tables cost a net 165 bytes.
+- **ROM:** on DMG builds the plugin is a net 143-byte *saving*, because the stock fade path it replaces is bigger; on CGB builds the per-channel perceptual fade tables cost a net 165 bytes. Note that this is engine code only — the precalculated palette data each Fade Street event emits adds its own bytes to your script banks on top, and can be substantial for long fades and cycles.
 - **Engine WRAM headroom:** the stock GB Studio 4.3.0 engine leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922 bytes). With this plugin installed roughly **856 bytes** remain. This figure does not depend on how many global variables your project defines: the script memory array has a fixed size of VM_HEAP_SIZE + (VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE) words — 768 + 16 × 64 = 1,792 words (3,584 bytes) with stock engine settings.
 - **SRAM:** not used.
 
