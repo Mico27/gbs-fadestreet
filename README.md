@@ -23,6 +23,8 @@ This version is a fork of the original Fade Street by [gearfo](https://gearfo.it
 4. [Events Reference](#events-reference)
 5. [Media](#media)
 6. [Memory Footprint](#memory-footprint)
+7. [Bank 0 (HOME) Usage](#bank-0-home-usage)
+8. [Changelog](#changelog)
 
 ---
 
