@@ -1,4 +1,4 @@
-﻿#pragma bank 255
+#pragma bank 255
 
 #include <string.h>
 
@@ -321,7 +321,7 @@ UBYTE load_scene(const scene_t * scene, UBYTE bank, UBYTE init_data) BANKED {
     if (triggers_len != 0) {
         MemcpyBanked(&triggers, scn.triggers.ptr, sizeof(trigger_t) * triggers_len, scn.triggers.bank);
     }
-
+    scene_transition_reset();
     scroll_reset();
     scroll_offset_x = 0;
     scroll_offset_y = 0;

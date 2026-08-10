@@ -1,4 +1,4 @@
-﻿#pragma bank 255
+#pragma bank 255
 
 #include <string.h>
 
@@ -324,6 +324,7 @@ UBYTE load_scene(const scene_t * scene, UBYTE bank, UBYTE init_data) BANKED {
     }
 
     metatile_reset();
+    scene_transition_reset();
     scroll_reset();
     scroll_offset_x = 0;
     scroll_offset_y = 0;
