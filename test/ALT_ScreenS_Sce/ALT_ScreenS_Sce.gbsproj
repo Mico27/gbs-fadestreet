@@ -1,0 +1,8 @@
+{
+  "_resourceType": "project",
+  "name": "ALT_ScreenS_Sce",
+  "author": "micka",
+  "notes": "FadeStreetPlugin with ScreenScrollPlugin, SceneStackExPlugin — selects engineAlt/ScreenS_Sce.",
+  "_version": "4.2.0",
+  "_release": "10"
+}
