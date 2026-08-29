@@ -1,12 +1,12 @@
 # gbs-fadestreet
 
-**Version 4.3.1 — Requires GB Studio ≥ 4.3.0**
+**Version 4.3.1. Requires GB Studio 4.3.0 or newer.**
 
 [*Fade Street*](https://gearfo.itch.io/fade-street) is a GB Studio plugin for creating better looking colour fades, as well as many other types of palette effect. It is suitable for colour-only games, monochrome-only games, and mixed ("black cart") games, although some features are exclusive to certain modes.
 
-By default, GB Studio generates colour fades with a very simple algorithm that can run on a Game Boy. Your PC is far more powerful, so it can produce much better looking and much more complicated colour effects. That is the idea behind Fade Street: instead of calculating colours on the fly on the Game Boy, they are calculated ahead of time on your PC and the results are stored in the ROM. Your game just plays back the precalculated effect.
+GB Studio works out its colour fades on the Game Boy itself, which limits them to a very simple calculation. Fade Street works them out on your PC when you build the project and stores the results in the ROM, so your game plays the finished effect back. That buys you smooth perceptual fades, day to night transitions, animated waterfalls, flickering neon, and effects that fade and animate at the same time.
 
-No knowledge of GBVM is required — you use the GUI events and the scripts are compiled behind the scenes.
+You build all of it from events in the editor. No scripting by hand is involved.
 
 This version is a fork of the original Fade Street by [gearfo](https://gearfo.itch.io/).
 
@@ -21,10 +21,11 @@ This version is a fork of the original Fade Street by [gearfo](https://gearfo.it
 2. [Project Setup](#project-setup)
 3. [Size Limits and Restrictions](#size-limits-and-restrictions)
 4. [Events Reference](#events-reference)
-5. [Media](#media)
-6. [Memory Footprint](#memory-footprint)
-7. [Bank 0 (HOME) Usage](#bank-0-home-usage)
-8. [Changelog](#changelog)
+5. [FAQ](#faq)
+6. [Media](#media)
+7. [Memory Footprint](#memory-footprint)
+8. [Bank 0 (HOME) Usage](#bank-0-home-usage)
+9. [Changelog](#changelog)
 
 ---
 
@@ -44,7 +45,7 @@ A **colour cycle** shuffles the colours of the on-screen palettes in a predeterm
 
 The cycle above takes four time steps per iteration; the first ends at t=3 and a second begins at t=4. All cycles created by Fade Street loop seamlessly this way.
 
-When an event creates a fade **with** a colour cycle, the colours used in the cycle are faded along with the rest of the palettes — so a waterfall animated by a colour cycle can fade from day to night without pausing its animation.
+When an event creates a fade **with** a colour cycle, the cycle's colours fade along with everything else, so a waterfall animated by a colour cycle can go from day to night without its animation stopping.
 
 ![A diagram showing how a colour palette is cycled and faded at the same time.](.img/fadecycle.svg)
 
@@ -75,7 +76,7 @@ For background palettes, slots 0–3 of each palette are GB Studio's white, ligh
 | Format | When to use it |
 |---|---|
 | **GBS representative hex** | Copying hex values from the GB Studio palettes screen, to match existing GB Studio palettes. |
-| **sRGB 24-bit hex** / **linear RGB 24-bit hex** | Copying hex values from another graphics program. If you don't know which, try both — only one will look correct. |
+| **sRGB 24-bit hex** or **linear RGB 24-bit hex** | Copying hex values from another graphics program. If you do not know which, try both. Only one will look right. |
 | **RGB components** | Entering channels separately; three components per colour, each an integer 0–31. |
 | **Game Boy 15-bit hex** | The native Game Boy format, useful for copying palettes from an emulator. |
 
@@ -93,7 +94,7 @@ These are the closest thing Fade Street has to a drop-in replacement for the def
 
 Two events are exclusively for monochrome mode: **DMG Fade** and **DMG Palette Cycle**.
 
-DMG Fade includes an option to flicker intermediate colours — rapidly alternating between two colours to give the illusion of a third. This can produce three extra shades between the four normal greys, for a smoother gradient.
+DMG Fade can flicker intermediate colours, alternating quickly between two shades to suggest a third. That gives three extra shades between the four normal greys, for a smoother gradient.
 
 Original Game Boy screens blur successive frames together, which makes this look good. On newer screens, or in some emulators, it can produce very unpleasant visible flicker. Use it with caution.
 
@@ -101,9 +102,9 @@ Original Game Boy screens blur successive frames together, which makes this look
 
 ### Running several effects at once
 
-Sometimes you need two or more separate fades or colour cycles running at the same time — traffic lights on a slow cycle and a neon sign on a faster one, say. **Multiple Fades With Colour Cycles** and **Multiple Bespoke Colour Cycles** each have eight tabs, one effect per tab, all running simultaneously.
+Traffic lights on a slow cycle and a neon sign on a faster one need two effects at once. **Multiple Fades With Colour Cycles** and **Multiple Bespoke Colour Cycles** each have eight tabs, one effect per tab, all running together.
 
-This is more CPU-efficient, because the effects are combined into a single script running in one thread, and it guarantees the effects stay synchronised.
+Combining them into one script also costs less processor time and keeps them in step with each other.
 
 Those two events also offer **BlendShift Cycling**, not available in the other cycle events, where cycle colours fade into one another instead of jumping. It can greatly enhance certain effects, but it forces palettes to update every frame, which creates very large scripts. Use it in moderation.
 
@@ -111,8 +112,8 @@ Those two events also offer **BlendShift Cycling**, not available in the other c
 
 ## Project Setup
 
-1. Copy the `FadeStreetPlugin/` directory into your project's `plugins/` subdirectory. This adds the new events to the *Add Event* menu and automatically applies the engine modifications when you compile.
-2. Because automatic fades are disabled, add fade events to each scene to control fade in and fade out manually.
+1. Copy the `FadeStreetPlugin` folder into your project's `plugins` folder. The new events appear in the **Add Event** menu and the engine changes are applied when you build.
+2. Automatic fades stop working once the plugin is installed, so add fade events to each scene to control fading in and out yourself.
 
 A demo project is included in `FadeStreetPluginExample/`, containing examples of most Fade Street events in action, with comments filling in the practical details.
 
@@ -128,13 +129,13 @@ The Automagic events are the only ones that work in both colour and monochrome m
 - **The new events use more ROM than the automatic fades.** Fades with more colour steps take more space, and colour cycles can use quite a lot depending on the options chosen.
 - **BlendShift Cycling creates very large scripts**, because it updates palettes every frame.
 - **Multi-effect events run for the least common multiple of their cycle lengths.** If one cycle takes 25 frames and another 50, the event is 50 frames long; if one takes 19 and another 17, the event is 323 frames long. Pick cycle lengths that combine sensibly.
-- **The plugin replaces several stock engine files** — the fade manager, palette handling, scene loading, music and the interrupt handlers. Any other plugin that also modifies those parts of the engine will not be compatible unless the engine files are merged by hand.
+- **The plugin replaces several stock engine files**, covering fades, palettes, scene loading, music and the screen interrupts. Another plugin changing the same parts needs the engine files merged by hand.
 
 ---
 
 ## Events Reference
 
-All events appear under the **Fade Street** group. Five of them also appear under **Fade Street - Beginner Friendly** — those are the easiest ones to start with, and are marked below.
+All events appear under the **Fade Street** group. Five of them also appear under **Fade Street - Beginner Friendly**. Those are the ones to start with, and they are marked below.
 
 ### Fades
 
@@ -191,6 +192,64 @@ All events appear under the **Fade Street** group. Five of them also appear unde
 
 ---
 
+## FAQ
+
+**My fades look banded and muddy. Can this fix them?**
+Yes. GB Studio calculates fades on the Game Boy with a very rough method. Fade Street works them
+out on your PC and stores the result, so the steps land where your eye expects them.
+
+**My Fade In and Fade Out events stopped working after installing this.**
+That is expected. The plugin turns off automatic fades and the built-in fade events. Use
+**Automagic Fade In** and **Automagic Fade Out**, which read the scene palettes you already set in
+the editor.
+
+**Which event should I start with?**
+The five marked with a star, under **Fade Street - Beginner Friendly**. **Automagic Fade In** and
+**Automagic Fade Out** are the closest replacements for the built-in ones.
+
+**How do I do a day to night transition?**
+Use **Standard Fade** with your daytime palettes at one end and your night palettes at the other.
+Colours can move in different directions, so the sky can darken while lamps brighten.
+
+**How do I animate water, fire or a spinning light?**
+Use a colour cycle. Give it the palette slots the effect uses and the colours to move through them.
+The cycle loops seamlessly.
+
+**Can something animate and fade at the same time?**
+Yes. The fade with colour cycle events do both together, so a waterfall can keep flowing while the
+scene fades to night.
+
+**How do I run two unrelated effects at once?**
+Use **Multiple Fades With Colour Cycles** or **Multiple Bespoke Colour Cycles**. Each has eight
+tabs and runs them all in one script, which costs less processor time and keeps them in step.
+
+**Does it work on original Game Boy?**
+Yes. **DMG Fade** and **DMG Palette Cycle** are for monochrome, and the Automagic events work in
+both modes.
+
+**How do I support both colour and monochrome from one project?**
+The Automagic events handle both on their own. For the rest, wrap them in an **If Color Mode Is
+Available** event and build one version for each mode.
+
+**Why did my ROM grow so much?**
+Each event stores its precalculated colours in the ROM. More steps means more data, and BlendShift
+Cycling updates every frame, so it produces by far the largest scripts. Use it sparingly.
+
+**My multi-effect event runs much longer than I expected.**
+It runs for the shortest span that all its cycles fit into evenly. Cycles of 19 and 17 frames give
+323 frames. Pick lengths that divide into each other, such as 25 and 50.
+
+**The flicker option looks terrible on my screen.**
+Original Game Boy screens blur frames together, which is what makes it work. Modern screens and
+many emulators show the flicker directly. Leave it off unless you are targeting original hardware.
+
+**Does it work with other plugins?**
+It replaces the engine's fade, palette, scene loading, music and screen interrupt code, so another
+plugin touching the same parts needs merging by hand. Compatibility files ship for ContinuousScene
+and for ScreenScroll with Metatile.
+
+---
+
 ## Media
 
 <img src=".img/tri.webp" width="240"> <img src=".img/ball.webp" width="240"> <img src=".img/chomp.webp" width="240">
@@ -200,18 +259,18 @@ All events appear under the **Fade Street** group. Five of them also appear unde
 
 ## Memory Footprint
 
-Measured against the stock GB Studio **4.3.0-e1** engine by `measure_plugin_memory.js` (per-file SDCC compile with GB Studio's own build flags, at default engine settings; report of 2026-08-13). Figures are this plugin's *delta* versus stock — a file that replaces a stock engine file counts only the difference, which is why a plugin can come out negative. Using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks, on top of the fixed cost below.
+Measured against the stock GB Studio **4.3.0-e1** engine at default engine settings, report of 2026-08-13. Figures are the difference against a stock project: a file that replaces a stock engine file counts only the change, which is why a plugin can come out negative. Each event you use also compiles a few bytes of script into your project, on top of the fixed cost below.
 
 | Budget | Cost |
 |---|---|
 | Bank 0 (HOME) | +16 bytes |
-| WRAM | −2 bytes |
-| Banked ROM | −159 bytes |
+| WRAM | -2 bytes |
+| Banked ROM | -159 bytes |
 
-- **Bank 0:** 16 bytes are resident in the non-switchable bank (`interrupts.c`); everything else lives in a switchable bank. See [Bank 0 (HOME) Usage](#bank-0-home-usage).
-- **WRAM:** the plugin's fade state is 2 bytes *smaller* than the stock fade manager's.
-- **Banked ROM:** a net 159-byte *saving* — the stock fade path the plugin replaces is bigger than the perceptual one. This is engine code only: the precalculated palette data each Fade Street event emits adds its own bytes to your script banks on top, and can be substantial for long fades and cycles.
-- **Engine WRAM headroom:** a stock GB Studio 4.3.0 project leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922). With this plugin installed roughly **856 bytes** remain. That does not change with the number of global variables your project defines: the script memory array is a fixed 3,584 bytes at stock engine settings (VM_HEAP_SIZE + VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE = 768 + 16 × 64 words).
+- **Bank 0:** 16 bytes sit in the fixed bank, in the screen interrupt code. Everything else lives in a switchable bank. See [Bank 0 (HOME) Usage](#bank-0-home-usage).
+- **WRAM:** 2 bytes *less* than the stock fade code uses.
+- **Banked ROM:** a 159-byte *saving*, because the stock fade code the plugin replaces is bigger than its own. That covers engine code only. The precalculated palette data each Fade Street event produces adds its own bytes on top, and a long fade or cycle can add a lot.
+- **Engine WRAM headroom:** a stock GB Studio 4.3.0 project leaves about **854 bytes** of WRAM free (the engine has 7,776 bytes to work with and uses 6,922 of them). With this plugin installed roughly **856 bytes** remain. Adding more global variables to your project does not change that figure, because script memory is a fixed 3,584 byte block at stock engine settings.
 - **SRAM:** not used.
 
 ---
@@ -219,10 +278,9 @@ Measured against the stock GB Studio **4.3.0-e1** engine by `measure_plugin_memo
 <!-- BANK0:BEGIN -->
 ## Bank 0 (HOME) Usage
 
-Bank 0 is the 16 KB non-switchable ROM bank that the GB Studio engine core,
-the interrupt handlers and the GBDK runtime all share. Banked ROM is cheap
-(add another bank), bank 0 is not, so it is usually the first thing a project
-runs out of.
+Bank 0 is the 16 KB fixed ROM bank shared by the GB Studio engine core, the
+interrupt handlers and the GBDK runtime. Extra banked ROM is cheap to add,
+bank 0 is not, so bank 0 is usually the first thing a project runs out of.
 
 | | Bytes |
 |---|---|
@@ -233,21 +291,21 @@ Everything else this plugin adds lives in banked ROM.
 
 | Module | This plugin | Stock engine | Bank 0 cost |
 |---|---|---|---|
-| `core/interrupts.c` | 261 | 245 | +16 |
+| Screen interrupts | 261 | 245 | +16 |
 
-Modules that replace or patch a stock engine file only cost the *difference*:
+A module that replaces a stock engine file costs only the *difference*, because
 the stock version's bank 0 bytes were being spent anyway.
 
 <details><summary>How this was measured</summary>
 
-GB Studio 4.3.0-e1, default engine settings. Each module is compiled with the
-toolchain and flags GB Studio itself uses, and the `A _HOME size` record SDCC
-writes into the resulting `.rel` object is read back; the stock column is the
-same compile of the engine file this module replaces.
+GB Studio 4.3.0-e1, default engine settings. Each module was compiled with the
+toolchain and flags GB Studio itself uses, and the bank 0 size the compiler
+recorded was read back. The stock column is the same compile of the engine file
+the module replaces.
 
-The "free" figure is a stock project with this plugin and nothing else. Your
-own number will differ: other plugins, and any engine settings that change what
-the core compiles, move it independently of this plugin.
+The "free" figure assumes a stock project with this plugin and nothing else.
+Your own number will differ, because other plugins and any engine settings that
+change what the core compiles move it too.
 
 </details>
 <!-- BANK0:END -->
@@ -266,13 +324,13 @@ bumps, patch regeneration, packaging fixes and documentation edits are omitted.
 
 ### 2026-06-14
 
-- Added custom script parameter / stack support to the events.
+- Added custom script parameter and stack support to the events.
 
 ### 2026-02-14
 
-- Added a compatibility file for use with the ScreenScroll + Metatile plugin combination.
+- Added a compatibility file for the ScreenScroll and Metatile plugins used together.
 
 ### 2026-02-03
 
 - Fork release.
-- Fixed the MOD music kernel panic bug.
+- Fixed the crash when MOD music was playing.
